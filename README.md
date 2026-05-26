@@ -78,9 +78,34 @@
 
 ## MCP
 
-MCP (Model Context Protocol) 服务器配置，用于扩展 Agent 的工具能力。
+MCP (Model Context Protocol) 服务器 — 扩展 Claude Code 的工具能力，连接外部服务和 API。
 
-> 待补充。
+收录社区 Top 20 最受欢迎的 MCP 服务器，每个子目录包含安装命令和 settings.json 配置模板。
+
+→ 详见 [mcp/README.md](mcp/README.md)
+
+| # | MCP | 类别 | 来源 |
+|---|---|---|---|
+| 1 | [GitHub](mcp/github/) | 开发工具 | [官方](https://github.com/modelcontextprotocol/servers) |
+| 2 | [Filesystem](mcp/filesystem/) | 开发工具 | [官方](https://github.com/modelcontextprotocol/servers) |
+| 3 | [Git](mcp/git/) | 开发工具 | [idosal/git-mcp](https://github.com/idosal/git-mcp) |
+| 4 | [Playwright](mcp/playwright/) | 浏览器测试 | [Microsoft](https://github.com/microsoft/playwright-mcp) |
+| 5 | [Chrome DevTools](mcp/chrome-devtools/) | 浏览器调试 | [ChromeDevTools](https://github.com/ChromeDevTools/chrome-devtools-mcp) |
+| 6 | [Figma](mcp/figma/) | 设计→代码 | [Figma](https://github.com/figma/figma-developer-mcp) |
+| 7 | [Context7](mcp/context7/) | 实时文档 | [Upstash](https://github.com/upstash/context7) |
+| 8 | [Brave Search](mcp/brave-search/) | 网页搜索 | [Anthropic](https://github.com/modelcontextprotocol/servers) |
+| 9 | [Firecrawl](mcp/firecrawl/) | 网页抓取 | [Firecrawl](https://github.com/firecrawl/firecrawl-mcp) |
+| 10 | [Perplexity](mcp/perplexity/) | 深度研究 | [Perplexity](https://docs.perplexity.ai/guides/mcp-server) |
+| 11 | [Postgres Pro](mcp/postgres-pro/) | 数据库 | [Crystal DBA](https://github.com/crystaldba/postgres-mcp-pro) |
+| 12 | [Supabase](mcp/supabase/) | 数据库 | [Supabase](https://github.com/supabase-community/mcp-server-supabase) |
+| 13 | [Stripe](mcp/stripe/) | 支付 | [Stripe](https://github.com/stripe/mcp) |
+| 14 | [Slack](mcp/slack/) | 沟通 | [Slack](https://github.com/slack/mcp) |
+| 15 | [Notion](mcp/notion/) | 知识管理 | [Notion](https://github.com/notionhq/notion-mcp-server) |
+| 16 | [Linear](mcp/linear/) | 项目管理 | [Linear](https://github.com/linear/linear-mcp) |
+| 17 | [Vercel](mcp/vercel/) | 部署 | [Vercel](https://github.com/vercel/vercel-mcp) |
+| 18 | [Sentry](mcp/sentry/) | 错误监控 | [Sentry](https://github.com/getsentry/sentry-mcp) |
+| 19 | [Desktop Commander](mcp/desktop-commander/) | 系统控制 | [wonderwhy-er](https://github.com/wonderwhy-er/DesktopCommanderMCP) |
+| 20 | [Memory](mcp/memory/) | 记忆系统 | [Anthropic](https://github.com/modelcontextprotocol/servers) |
 
 ---
 
