@@ -1,2 +1,116 @@
-# skills-prompts-mcp
-自己常用的一些工具的聚合整理和迭代（包括收集到的开源部分）
+# Skills · Prompts · MCP
+
+自己日常使用的 AI 技能、提示词和 MCP 配置的聚合仓库，收录社区 Top 20 最受欢迎的 Claude Code Skills。
+
+---
+
+## 目录结构
+
+```
+.
+├── skills/          # 24 个 Agent Skills（SKILL.md 标准格式）
+├── prompts/         # 独立提示词（复制粘贴即用）
+├── mcp/             # MCP 服务器配置
+└── README.md
+```
+
+---
+
+## Skills
+
+遵循 [Agent Skills](https://agentskills.io) 开放标准，Claude Code、Codex、Cursor、Gemini CLI 等均可加载。
+
+### Anthropic 官方
+
+| Skill | 说明 | 来源 |
+|---|---|---|
+| 🛠️ [skill-creator](skills/skill-creator/SKILL.md) | 元技能：创建、优化和评估新 Skill | [anthropics/skills](https://github.com/anthropics/skills) |
+| 🔌 [mcp-builder](skills/mcp-builder/SKILL.md) | 构建 MCP 服务器，连接外部 API 和工具 | [anthropics/skills](https://github.com/anthropics/skills) |
+| 🧪 [webapp-testing](skills/webapp-testing/SKILL.md) | Playwright 驱动的 Web 应用测试与调试 | [anthropics/skills](https://github.com/anthropics/skills) |
+| 🎨 [frontend-design](skills/frontend-design/SKILL.md) | 生产级前端界面设计，告别"AI 味"审美 | [anthropics/skills](https://github.com/anthropics/skills) |
+| 📄 [pdf](skills/pdf/SKILL.md) | PDF 全能处理：读取、创建、合并、拆分、表单、OCR | [anthropics/skills](https://github.com/anthropics/skills) |
+| 📝 [docx](skills/docx/SKILL.md) | Word 文档生成与编辑，支持目录、页眉、批注 | [anthropics/skills](https://github.com/anthropics/skills) |
+| 📊 [pptx](skills/pptx/SKILL.md) | PowerPoint 幻灯片创建与编辑 | [anthropics/skills](https://github.com/anthropics/skills) |
+| 📈 [xlsx](skills/xlsx/SKILL.md) | Excel 电子表格创建、编辑、清洗、图表 | [anthropics/skills](https://github.com/anthropics/skills) |
+| 🏷️ [brand-guidelines](skills/brand-guidelines/SKILL.md) | 品牌视觉规范：颜色、字体、风格一致性 | [anthropics/skills](https://github.com/anthropics/skills) |
+
+### Superpowers 工程工作流
+
+| Skill | 说明 | 来源 |
+|---|---|---|
+| 💡 [brainstorming](skills/brainstorming/SKILL.md) | 苏格拉底式需求审视与方案设计 | [obra/superpowers](https://github.com/obra/superpowers) |
+| 🧪 [test-driven-development](skills/test-driven-development/SKILL.md) | 严格 TDD：RED → GREEN → REFACTOR | [obra/superpowers](https://github.com/obra/superpowers) |
+| 🐛 [systematic-debugging](skills/systematic-debugging/SKILL.md) | 科学调试法：观察 → 假设 → 验证 → 修复 | [obra/superpowers](https://github.com/obra/superpowers) |
+| ✅ [verification-before-completion](skills/verification-before-completion/SKILL.md) | 完成前强制验证，证据先于断言 | [obra/superpowers](https://github.com/obra/superpowers) |
+| 📋 [writing-plans](skills/writing-plans/SKILL.md) | 将任务拆分为 2-5 分钟可执行步骤 | [obra/superpowers](https://github.com/obra/superpowers) |
+| 👀 [requesting-code-review](skills/requesting-code-review/SKILL.md) | 提交前代码审查，按严重程度分类 | [obra/superpowers](https://github.com/obra/superpowers) |
+| 🌿 [using-git-worktrees](skills/using-git-worktrees/SKILL.md) | Git Worktree 隔离开发，并行特性开发 | [obra/superpowers](https://github.com/obra/superpowers) |
+
+### 社区热门
+
+| Skill | 说明 | 来源 |
+|---|---|---|
+| 🔍 [find-skills](skills/find-skills/SKILL.md) | 技能发现引擎，帮你搜索和安装合适的 Skill | [vercel-labs/skills](https://github.com/vercel-labs/skills) |
+| 📐 [planning-with-files](skills/planning-with-files/SKILL.md) | Manus 风格文件化任务规划，持久化工作记忆 | [OthmanAdi/planning-with-files](https://github.com/OthmanAdi/planning-with-files) |
+| 🪨 [caveman](skills/caveman/SKILL.md) | 山顶洞人模式：Token 用量直降 ~75%，三倍响应速度 | [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman) |
+| 🎯 [ui-ux-pro-max](skills/ui-ux-pro-max/SKILL.md) | UI/UX 设计智能体：50+ 风格、161 色板、57 字体组合 | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) |
+
+### 数字生命卡兹克
+
+| Skill | 说明 | 来源 |
+|---|---|---|
+| 🧹 [neat-freak](skills/neat-freak/SKILL.md) | 会话结束后文档与记忆的洁癖级同步 | [khazix-skills](https://github.com/KKKKhazix/khazix-skills) |
+| 🔭 [hv-analysis](skills/hv-analysis/SKILL.md) | 横纵分析法深度研究，产出万字 PDF 报告 | [khazix-skills](https://github.com/KKKKhazix/khazix-skills) |
+| ✍️ [khazix-writer](skills/khazix-writer/SKILL.md) | 卡兹克公众号长文写作风格 | [khazix-skills](https://github.com/KKKKhazix/khazix-skills) |
+| 🔥 [aihot](skills/aihot/SKILL.md) | AI HOT 中文 AI 资讯查询，无需 API Key | [khazix-skills](https://github.com/KKKKhazix/khazix-skills) |
+
+---
+
+## Prompts
+
+独立提示词，复制粘贴到 ChatGPT / Claude / Gemini 等任意对话中即可使用。
+
+| Prompt | 说明 | 来源 |
+|---|---|---|
+| 🔭 [横纵分析法](prompts/横纵分析法.md) | hv-analysis 的轻量 Prompt 版，适用于 Deep Research 模型 | [khazix-skills](https://github.com/KKKKhazix/khazix-skills) |
+
+---
+
+## MCP
+
+MCP (Model Context Protocol) 服务器配置，用于扩展 Agent 的工具能力。
+
+> 待补充。
+
+---
+
+## 安装方式
+
+每个 Skill 的安装方式取决于你使用的 Agent 平台：
+
+```bash
+# Claude Code — 直接引用本地路径
+claude skill add ./skills/skill-creator
+
+# 通用方式 (skills.sh CLI)
+npx skills add anthropics/skills --skill pdf
+
+# Claude Code 插件市场
+/plugin marketplace add anthropics/skills
+```
+
+---
+
+## 致谢
+
+所有技能均来自其各自作者的辛勤开源贡献：
+
+- [anthropics/skills](https://github.com/anthropics/skills) — Anthropic 官方，MIT License
+- [obra/superpowers](https://github.com/obra/superpowers) — Jesse Vincent，MIT License
+- [vercel-labs/skills](https://github.com/vercel-labs/skills) — Vercel，Apache 2.0
+- [OthmanAdi/planning-with-files](https://github.com/OthmanAdi/planning-with-files) — MIT License
+- [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman) — MIT License
+- [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) — MIT License
+- [KKKKhazix/khazix-skills](https://github.com/KKKKhazix/khazix-skills) — 数字生命卡兹克，MIT License
+
+本仓库仅做聚合整理，各 Skill 版权归原作者所有。
