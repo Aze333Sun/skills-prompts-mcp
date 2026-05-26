@@ -64,6 +64,21 @@
 | ✍️ [khazix-writer](skills/khazix-writer/SKILL.md) | 卡兹克公众号长文写作风格 | [khazix-skills](https://github.com/KKKKhazix/khazix-skills) |
 | 🔥 [aihot](skills/aihot/SKILL.md) | AI HOT 中文 AI 资讯查询，无需 API Key | [khazix-skills](https://github.com/KKKKhazix/khazix-skills) |
 
+### 小说写作
+
+| Skill | 说明 | 来源 |
+|---|---|---|
+| 📖 [story-init](skills/story-init/SKILL.md) | 故事脚手架搭建：圣经、角色/世界观注册表 | [story-skills](https://github.com/danjdewhurst/story-skills) |
+| 👤 [character-management](skills/character-management/SKILL.md) | 角色档案：关系、特征、人物弧光、家族树 | [story-skills](https://github.com/danjdewhurst/story-skills) |
+| 🌍 [worldbuilding](skills/worldbuilding/SKILL.md) | 世界观构建：魔法/政治/科技/宗教系统 | [story-skills](https://github.com/danjdewhurst/story-skills) |
+| 📐 [plot-structure](skills/plot-structure/SKILL.md) | 情节规划（三幕式、英雄之旅、起承转合） | [story-skills](https://github.com/danjdewhurst/story-skills) |
+| ✍️ [chapter-writing](skills/chapter-writing/SKILL.md) | 大纲优先的章节写作，自动拉取上下文保持一致 | [story-skills](https://github.com/danjdewhurst/story-skills) |
+| 💡 [story-ideator](skills/story-ideator/SKILL.md) | 从宇宙圣经生成原创故事线，不抄袭源材料 | [Claude-Book](https://github.com/ThomasHoussin/Claude-Book) |
+| 🔍 [book-analyzer](skills/book-analyzer/SKILL.md) | 分析已有书籍提取风格指纹、结构模式 | [Claude-Book](https://github.com/ThomasHoussin/Claude-Book) |
+| 📚 [bible-merger](skills/bible-merger/SKILL.md) | 合并多源设定文件为统一的故事圣经 | [Claude-Book](https://github.com/ThomasHoussin/Claude-Book) |
+| 🎨 [perplexity-improver](skills/perplexity-improver/SKILL.md) | 降低 AI 痕迹，提升文风自然度 | [Claude-Book](https://github.com/ThomasHoussin/Claude-Book) |
+| 🇨🇳 [chinese-webnovel](skills/chinese-webnovel/SKILL.md) | 中文网文全流程：选材/构思/分卷/章纲/去AI味 | [Chinese-WebNovel-Skill](https://github.com/Tomsawyerhu/Chinese-WebNovel-Skill) |
+
 ---
 
 ## Prompts
@@ -145,5 +160,8 @@ npx skills add anthropics/skills --skill pdf
 - [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman) — MIT License
 - [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) — MIT License
 - [KKKKhazix/khazix-skills](https://github.com/KKKKhazix/khazix-skills) — 数字生命卡兹克，MIT License
+- [danjdewhurst/story-skills](https://github.com/danjdewhurst/story-skills) — MIT License
+- [ThomasHoussin/Claude-Book](https://github.com/ThomasHoussin/Claude-Book) — MIT License
+- [Tomsawyerhu/Chinese-WebNovel-Skill](https://github.com/Tomsawyerhu/Chinese-WebNovel-Skill) — MIT License
 
 本仓库仅做聚合整理，各 Skill 版权归原作者所有。
