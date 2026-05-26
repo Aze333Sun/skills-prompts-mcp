@@ -68,11 +68,19 @@
 
 ## Prompts
 
-独立提示词，复制粘贴到 ChatGPT / Claude / Gemini 等任意对话中即可使用。
+80 个高质量提示词，覆盖 8 个方向，每个方向 10 个。复制粘贴到 ChatGPT / Claude / Gemini 等任意对话中即可使用。
 
-| Prompt | 说明 | 来源 |
+| 分类 | 内容 | 提示词数 |
 |---|---|---|
-| 🔭 [横纵分析法](prompts/横纵分析法.md) | hv-analysis 的轻量 Prompt 版，适用于 Deep Research 模型 | [khazix-skills](https://github.com/KKKKhazix/khazix-skills) |
+| 🖥️ [前端开发](prompts/前端开发.md) | React 组件、CSS 布局、性能优化、动画、测试 | 10 |
+| ⚙️ [后端开发](prompts/后端开发.md) | API 设计、数据库、缓存、消息队列、认证授权 | 10 |
+| 📝 [文档写作](prompts/文档写作.md) | README、API 文档、技术方案、复盘报告、周报 | 10 |
+| 🔍 [代码审查与重构](prompts/代码审查与重构.md) | PR Review、坏味道识别、重构手法、测试重构 | 10 |
+| 🐛 [调试与排错](prompts/调试与排错.md) | 日志分析、性能瓶颈、内存泄漏、生产事故 | 10 |
+| 🤖 [AI 开发](prompts/AI开发.md) | Prompt 工程、RAG 调优、Agent 设计、模型迁移 | 10 |
+| 🚀 [DevOps](prompts/DevOps.md) | Docker、CI/CD、K8s、监控告警、故障演练 | 10 |
+| 📊 [数据分析与 SQL](prompts/数据分析与SQL.md) | SQL 优化、数据清洗、A/B 测试、指标体系 | 10 |
+| 🔭 [横纵分析法](prompts/横纵分析法.md) | 深度研究 Prompt（轻量版），适用于 Deep Research 模型 | 独立 |
 
 ---
 
