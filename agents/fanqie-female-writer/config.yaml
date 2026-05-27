@@ -1,0 +1,12 @@
+# 子代理运行配置
+name: fanqie-female-writer
+model: deepseek-v4-pro
+tools:
+  - read_file
+  - write_file
+  - edit_file
+  - search_content
+  - web_search
+  - run_skill
+run_as: subagent
+description: "番茄小说女频创作子代理 — 现代言情/古言/重生/甜宠/总裁/种田等女频热门题材"

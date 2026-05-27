@@ -1,0 +1,12 @@
+# 子代理运行配置
+name: fanqie-male-writer
+model: deepseek-v4-pro
+tools:
+  - read_file
+  - write_file
+  - edit_file
+  - search_content
+  - web_search
+  - run_skill
+run_as: subagent
+description: "番茄小说男频创作子代理 — 都市重生/玄幻/系统/赘婿/游戏/末世等男频热门题材"
