@@ -1,0 +1,6 @@
+# 子代理运行配置
+name: agent-name
+model: deepseek-v4-pro          # 模型选择
+tools: []                        # 工具白名单，空数组 = 继承全部
+run_as: subagent                 # subagent | inline
+description: "简要描述"

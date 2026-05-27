@@ -1,0 +1,12 @@
+# 子代理运行配置
+name: frontend-designer
+model: deepseek-v4-pro
+tools:
+  - read_file
+  - write_file
+  - edit_file
+  - search_files
+  - web_search
+  - web_fetch
+run_as: subagent
+description: "前端设计子代理 — 创建独特、生产级的前端界面，拒绝 AI 通用美学"
