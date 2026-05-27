@@ -1,0 +1,14 @@
+# 子代理运行配置
+name: toutiao-ai-edu
+model: deepseek-v4-pro
+tools:
+  - read_file
+  - write_file
+  - edit_file
+  - search_content
+  - search_files
+  - web_search
+  - web_fetch
+  - run_skill
+run_as: subagent
+description: "今日头条 AI 教育赛道内容创作子代理 — AI 工具教程、行业解读、技能学习、副业经验等方向的高质量头条爆款文章"
