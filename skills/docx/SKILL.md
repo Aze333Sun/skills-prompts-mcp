@@ -1,11 +1,13 @@
 ---
 name: docx
-description: "Use when creating, editing, reading, or analyzing .docx files, working with tracked changes, adding comments, or extracting text from Word documents."
+description: "Use when creating, editing, reading, or analyzing .docx files, working with tracked changes, adding comments, or extracting text from Word documents. This is a simplified version; for advanced features (tables, images, TOC, validation scripts), see skills-collected/docx."
 source: anthropics/skills
 license: Apache-2.0
 ---
 
-# DOCX Processing
+# DOCX Processing (Simplified)
+
+> **注意**：本 Skill 是 docx 处理的简化版。如需高级功能（表格、图片、目录、验证脚本等），请参考 `skills-collected/docx`。
 
 ## When to Use
 

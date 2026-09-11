@@ -1,9 +1,7 @@
 ---
 name: novel-writer
-description: |
-  长篇网文写作 Skill。覆盖从选题构思→黄金三章→分卷章纲→逐章写作→去AI味→完稿审查的全流程。
-  适用场景：起新书、续写、章节诊断、节奏修复、开篇重写。触发词：写网文、起新书、写小说、续写、网文开头、章节诊断、黄金三章、章纲、去AI味、网文节奏。
-  与 chinese-webnovel 的关系：本 Skill 是自包含精简版，chinese-webnovel 包含更细的模块化深度参考和本地语料检索。
+description: "Use when writing Chinese web novels (长篇网文), planning new books, writing chapters, removing AI voice, or reviewing manuscripts. Covers the full pipeline from topic selection to final review."
+effort: high
 ---
 
 # 长篇网文写作

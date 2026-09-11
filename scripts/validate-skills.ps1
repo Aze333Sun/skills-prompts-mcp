@@ -21,6 +21,47 @@ function Get-FilesToCheck {
     }
 }
 
+# Extract description from frontmatter (handles multiline YAML)
+function Get-DescriptionFromFrontmatter {
+    param([string]$Frontmatter)
+    
+    # Try single-line description first: description: "..." or description: '...'
+    if ($Frontmatter -match 'description:\s*["'']([^"'']+)["'']') {
+        return $matches[1].Trim()
+    }
+    
+    # Try single-line without quotes: description: value
+    if ($Frontmatter -match 'description:\s*([^\n]+)') {
+        $line = $matches[1].Trim()
+        # Check if it's a multiline indicator
+        if ($line -eq '|' -or $line -eq '>' -or $line -eq '|-' -or $line -eq '>-') {
+            # Multiline: extract content from indented lines after the indicator
+            $lines = $Frontmatter -split "`n"
+            $capture = $false
+            $content = @()
+            foreach ($l in $lines) {
+                if ($capture) {
+                    if ($l -match '^\s+(.+)') {
+                        $content += $matches[1]
+                    } else {
+                        break
+                    }
+                }
+                if ($l -match 'description:\s*[|>-]') {
+                    $capture = $true
+                }
+            }
+            if ($content.Count -gt 0) {
+                return ($content -join " ").Trim()
+            }
+        } else {
+            return $line
+        }
+    }
+    
+    return $null
+}
+
 # Validate single SKILL.md file
 function Test-SkillFile {
     param([string]$FilePath)
@@ -55,11 +96,12 @@ function Test-SkillFile {
         }
     }
     
-    # Check 4: description field exists
-    if ($frontmatter -notmatch "description:\s*(.+)") {
+    # Check 4: description field exists and extract it
+    $description = Get-DescriptionFromFrontmatter -Frontmatter $frontmatter
+    
+    if ($null -eq $description -or $description -eq "") {
         $errors += "[$relativePath] Missing description field"
     } else {
-        $description = $matches[1].Trim().Trim('"').Trim("'")
         # Check 5: description starts with "Use when"
         if ($description -notmatch "^Use when") {
             $descPreview = $description.Substring(0, [Math]::Min(50, $description.Length))

@@ -1,6 +1,6 @@
 ---
 name: webnovel-writing
-description: 用于根据一段中文小说简介，规划、起稿、续写、改写中文网文。重点覆盖选材、构思、分卷、章纲、开头、节奏、章末、模仿检索、去 AI 味。
+description: "Use when planning, drafting, continuing, or rewriting Chinese web novels, covering topic selection, plot structure, chapter outlines, pacing, and AI voice removal."
 ---
 
 # 中文网文写作 Skill

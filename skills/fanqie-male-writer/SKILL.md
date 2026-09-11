@@ -1,9 +1,7 @@
 ---
 name: fanqie-male-writer
-description: |
-  番茄小说男频长篇网文写作 Skill。覆盖都市重生/逆袭、玄幻升级、游戏电竞、历史争霸、科幻末世、赘婿流、系统流、无限流等男频热门题材。
-  继承 fanqie-novel-writer 的番茄平台全部策略，叠加男频专属的升级体系、战斗节奏、爽点密度、力量感塑造等策略。
-  触发词：写番茄男频、男频网文、玄幻小说、都市重生、系统流、赘婿文、升级文、番茄爽文、帮我写一本男频小说。
+description: "Use when writing male-audience (男频) novels for the Fanqie platform, including urban rebirth, xuanhuan cultivation, gaming, history, sci-fi, system/cheat novels."
+effort: high
 ---
 
 # 番茄小说男频写作

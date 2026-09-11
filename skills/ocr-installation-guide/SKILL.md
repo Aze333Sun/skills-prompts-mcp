@@ -1,12 +1,14 @@
 ---
-name: opencode-review
-description: "Use when installing or configuring OpenCodeReview (OCR), running code reviews, or needing AI-assisted code review capabilities."
+name: ocr-installation-guide
+description: "Use when installing or configuring OpenCodeReview (OCR), setting up OCR commands, or needing reference documentation for OCR integration. This is an installation guide, not a review tool."
 effort: medium
 ---
 
-# OpenCodeReview 集成指南
+# OpenCodeReview 安装配置指南
 
 将阿里开源的 [OpenCodeReview](https://github.com/alibaba/open-code-review)（OCR）集成到 AI 编码助手，提供行级精准的代码审查能力。
+
+> **注意**：本 Skill 是 OCR 的安装配置参考文档。如需执行代码审查，请使用 `code-review-workflow`（OCR自动化）或 `mr-commit-template`（手动Checklist）。
 
 ## When to Use
 
