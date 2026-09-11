@@ -8,11 +8,33 @@
 
 ```
 .
-├── skills/          # 24 个 Agent Skills（SKILL.md 标准格式）
+├── skills/          # 34 个 Agent Skills（SKILL.md 标准格式）
+├── skills-collected/ # 27 个社区收集的 Skills
 ├── prompts/         # 独立提示词（复制粘贴即用）
 ├── mcp/             # MCP 服务器配置
+├── scripts/         # 门禁检查脚本
 └── README.md
 ```
+
+---
+
+## 门禁系统
+
+本仓库使用 Git pre-commit hook 自动检查 SKILL.md 格式规范：
+
+```bash
+# 手动运行检查
+.\scripts\validate-skills.ps1
+
+# Git commit 时自动检查
+# 安装 hook：复制 .git/hooks/pre-commit 到 .git/hooks/
+```
+
+**检查规则：**
+- YAML frontmatter 必须存在
+- `name` 字段格式正确（仅字母/数字/连字符）
+- `description` 以 "Use when..." 开头
+- 包含 When to Use、Quick Reference、Common Mistakes 标准章节
 
 ---
 
@@ -24,42 +46,42 @@
 
 | Skill | 说明 | 来源 |
 |---|---|---|
-| 🛠️ [skill-creator](skills/skill-creator/SKILL.md) | 元技能：创建、优化和评估新 Skill | [anthropics/skills](https://github.com/anthropics/skills) |
-| 🔌 [mcp-builder](skills/mcp-builder/SKILL.md) | 构建 MCP 服务器，连接外部 API 和工具 | [anthropics/skills](https://github.com/anthropics/skills) |
-| 🧪 [webapp-testing](skills/webapp-testing/SKILL.md) | Playwright 驱动的 Web 应用测试与调试 | [anthropics/skills](https://github.com/anthropics/skills) |
-| 🎨 [frontend-design](skills/frontend-design/SKILL.md) | 生产级前端界面设计，告别"AI 味"审美 | [anthropics/skills](https://github.com/anthropics/skills) |
-| 📄 [pdf](skills/pdf/SKILL.md) | PDF 全能处理：读取、创建、合并、拆分、表单、OCR | [anthropics/skills](https://github.com/anthropics/skills) |
-| 📝 [docx](skills/docx/SKILL.md) | Word 文档生成与编辑，支持目录、页眉、批注 | [anthropics/skills](https://github.com/anthropics/skills) |
-| 📊 [pptx](skills/pptx/SKILL.md) | PowerPoint 幻灯片创建与编辑 | [anthropics/skills](https://github.com/anthropics/skills) |
-| 📈 [xlsx](skills/xlsx/SKILL.md) | Excel 电子表格创建、编辑、清洗、图表 | [anthropics/skills](https://github.com/anthropics/skills) |
-| 🏷️ [brand-guidelines](skills/brand-guidelines/SKILL.md) | 品牌视觉规范：颜色、字体、风格一致性 | [anthropics/skills](https://github.com/anthropics/skills) |
+| 🛠️ [skill-creator](skills/skills-collected/skill-creator/SKILL.md) | 元技能：创建、优化和评估新 Skill | [anthropics/skills](https://github.com/anthropics/skills) |
+| 🔌 [mcp-builder](skills/skills-collected/mcp-builder/SKILL.md) | 构建 MCP 服务器，连接外部 API 和工具 | [anthropics/skills](https://github.com/anthropics/skills) |
+| 🧪 [webapp-testing](skills/skills-collected/webapp-testing/SKILL.md) | Playwright 驱动的 Web 应用测试与调试 | [anthropics/skills](https://github.com/anthropics/skills) |
+| 🎨 [frontend-design](skills/skills-collected/frontend-design/SKILL.md) | 生产级前端界面设计，告别"AI 味"审美 | [anthropics/skills](https://github.com/anthropics/skills) |
+| 📄 [pdf](skills/skills-collected/pdf/SKILL.md) | PDF 全能处理：读取、创建、合并、拆分、表单、OCR | [anthropics/skills](https://github.com/anthropics/skills) |
+| 📝 [docx](skills/docx/SKILL.md) | Word 文档生成与编辑，支持修订、批注、格式保留 | [anthropics/skills](https://github.com/anthropics/skills) |
+| 📊 [pptx](skills/skills-collected/pptx/SKILL.md) | PowerPoint 幻灯片创建与编辑 | [anthropics/skills](https://github.com/anthropics/skills) |
+| 📈 [xlsx](skills/skills-collected/xlsx/SKILL.md) | Excel 电子表格创建、编辑、清洗、图表 | [anthropics/skills](https://github.com/anthropics/skills) |
+| 🏷️ [brand-guidelines](skills/skills-collected/brand-guidelines/SKILL.md) | 品牌视觉规范：颜色、字体、风格一致性 | [anthropics/skills](https://github.com/anthropics/skills) |
 
 ### Superpowers 工程工作流
 
 | Skill | 说明 | 来源 |
 |---|---|---|
-| 💡 [brainstorming](skills/brainstorming/SKILL.md) | 苏格拉底式需求审视与方案设计 | [obra/superpowers](https://github.com/obra/superpowers) |
-| 🧪 [test-driven-development](skills/test-driven-development/SKILL.md) | 严格 TDD：RED → GREEN → REFACTOR | [obra/superpowers](https://github.com/obra/superpowers) |
-| 🐛 [systematic-debugging](skills/systematic-debugging/SKILL.md) | 科学调试法：观察 → 假设 → 验证 → 修复 | [obra/superpowers](https://github.com/obra/superpowers) |
-| ✅ [verification-before-completion](skills/verification-before-completion/SKILL.md) | 完成前强制验证，证据先于断言 | [obra/superpowers](https://github.com/obra/superpowers) |
+| 💡 [brainstorming](skills/skills-collected/brainstorming/SKILL.md) | 苏格拉底式需求审视与方案设计 | [obra/superpowers](https://github.com/obra/superpowers) |
+| 🧪 [test-driven-development](skills/skills-collected/test-driven-development/SKILL.md) | 严格 TDD：RED → GREEN → REFACTOR | [obra/superpowers](https://github.com/obra/superpowers) |
+| 🐛 [systematic-debugging](skills/skills-collected/systematic-debugging/SKILL.md) | 科学调试法：观察 → 假设 → 验证 → 修复 | [obra/superpowers](https://github.com/obra/superpowers) |
+| ✅ [verification-before-completion](skills/skills-collected/verification-before-completion/SKILL.md) | 完成前强制验证，证据先于断言 | [obra/superpowers](https://github.com/obra/superpowers) |
 | 📋 [writing-plans](skills/writing-plans/SKILL.md) | 将任务拆分为 2-5 分钟可执行步骤 | [obra/superpowers](https://github.com/obra/superpowers) |
-| 👀 [requesting-code-review](skills/requesting-code-review/SKILL.md) | 提交前代码审查，按严重程度分类 | [obra/superpowers](https://github.com/obra/superpowers) |
-| 🌿 [using-git-worktrees](skills/using-git-worktrees/SKILL.md) | Git Worktree 隔离开发，并行特性开发 | [obra/superpowers](https://github.com/obra/superpowers) |
+| 👀 [requesting-code-review](skills/skills-collected/requesting-code-review/SKILL.md) | 提交前代码审查，按严重程度分类 | [obra/superpowers](https://github.com/obra/superpowers) |
+| 🌿 [using-git-worktrees](skills/skills-collected/using-git-worktrees/SKILL.md) | Git Worktree 隔离开发，并行特性开发 | [obra/superpowers](https://github.com/obra/superpowers) |
 
 ### 社区热门
 
 | Skill | 说明 | 来源 |
 |---|---|---|
-| 🔍 [find-skills](skills/find-skills/SKILL.md) | 技能发现引擎，帮你搜索和安装合适的 Skill | [vercel-labs/skills](https://github.com/vercel-labs/skills) |
-| 📐 [planning-with-files](skills/planning-with-files/SKILL.md) | Manus 风格文件化任务规划，持久化工作记忆 | [OthmanAdi/planning-with-files](https://github.com/OthmanAdi/planning-with-files) |
-| 🪨 [caveman](skills/caveman/SKILL.md) | 山顶洞人模式：Token 用量直降 ~75%，三倍响应速度 | [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman) |
-| 🎯 [ui-ux-pro-max](skills/ui-ux-pro-max/SKILL.md) | UI/UX 设计智能体：50+ 风格、161 色板、57 字体组合 | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) |
+| 🔍 [find-skills](skills/skills-collected/find-skills/SKILL.md) | 技能发现引擎，帮你搜索和安装合适的 Skill | [vercel-labs/skills](https://github.com/vercel-labs/skills) |
+| 📐 [planning-with-files](skills/skills-collected/planning-with-files/SKILL.md) | Manus 风格文件化任务规划，持久化工作记忆 | [OthmanAdi/planning-with-files](https://github.com/OthmanAdi/planning-with-files) |
+| 🪨 [caveman](skills/skills-collected/caveman/SKILL.md) | 山顶洞人模式：Token 用量直降 ~75%，三倍响应速度 | [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman) |
+| 🎯 [ui-ux-pro-max](skills/skills-collected/ui-ux-pro-max/SKILL.md) | UI/UX 设计智能体：50+ 风格、161 色板、57 字体组合 | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) |
 
 ### 数字生命卡兹克
 
 | Skill | 说明 | 来源 |
 |---|---|---|
-| 🧹 [neat-freak](skills/neat-freak/SKILL.md) | 会话结束后文档与记忆的洁癖级同步 | [khazix-skills](https://github.com/KKKKhazix/khazix-skills) |
+| 🧹 [neat-freak](skills/skills-collected/neat-freak/SKILL.md) | 会话结束后文档与记忆的洁癖级同步 | [khazix-skills](https://github.com/KKKKhazix/khazix-skills) |
 | 🔭 [hv-analysis](skills/hv-analysis/SKILL.md) | 横纵分析法深度研究，产出万字 PDF 报告 | [khazix-skills](https://github.com/KKKKhazix/khazix-skills) |
 | ✍️ [khazix-writer](skills/khazix-writer/SKILL.md) | 卡兹克公众号长文写作风格 | [khazix-skills](https://github.com/KKKKhazix/khazix-skills) |
 | 🔥 [aihot](skills/aihot/SKILL.md) | AI HOT 中文 AI 资讯查询，无需 API Key | [khazix-skills](https://github.com/KKKKhazix/khazix-skills) |
@@ -76,8 +98,39 @@
 | 💡 [story-ideator](skills/story-ideator/SKILL.md) | 从宇宙圣经生成原创故事线，不抄袭源材料 | [Claude-Book](https://github.com/ThomasHoussin/Claude-Book) |
 | 🔍 [book-analyzer](skills/book-analyzer/SKILL.md) | 分析已有书籍提取风格指纹、结构模式 | [Claude-Book](https://github.com/ThomasHoussin/Claude-Book) |
 | 📚 [bible-merger](skills/bible-merger/SKILL.md) | 合并多源设定文件为统一的故事圣经 | [Claude-Book](https://github.com/ThomasHoussin/Claude-Book) |
-| 🎨 [perplexity-improver](skills/perplexity-improver/SKILL.md) | 降低 AI 痕迹，提升文风自然度 | [Claude-Book](https://github.com/ThomasHoussin/Claude-Book) |
+| 🎨 [perplexity-improver](skills/skills-collected/perplexity-improver/SKILL.md) | 降低 AI 痕迹，提升文风自然度 | [Claude-Book](https://github.com/ThomasHoussin/Claude-Book) |
 | 🇨🇳 [chinese-webnovel](skills/chinese-webnovel/SKILL.md) | 中文网文全流程：选材/构思/分卷/章纲/去AI味 | [Chinese-WebNovel-Skill](https://github.com/Tomsawyerhu/Chinese-WebNovel-Skill) |
+
+### 代码审查与工作流
+
+| Skill | 说明 | 来源 |
+|---|---|---|
+| 🔍 [code-review](skills/code-review/SKILL.md) | 多Agent并行代码审查：bug/安全/性能/质量 | 自建 |
+| 🔍 [code-review-workflow](skills/code-review-workflow/SKILL.md) | 基于OCR的提交前代码审查工作流 | 自建 |
+| 📝 [mr-commit-template](skills/mr-commit-template/SKILL.md) | 提交前MR描述生成+代码评审+提交记录归档 | 自建 |
+| 🔍 [opencode-review](skills/opencode-review/SKILL.md) | OpenCodeReview(OCR)集成指南 | 自建 |
+| 🐙 [github-triage](skills/github-triage/SKILL.md) | GitHub Issue/PR统一处理，并行后台执行 | 自建 |
+
+### Skill 创建与管理
+
+| Skill | 说明 | 来源 |
+|---|---|---|
+| 🛠️ [create-skill](skills/create-skill/SKILL.md) | Skill创建/改进/评估工具包，支持基准测试 | 自建 |
+| 🔍 [skill-lookup](skills/skill-lookup/SKILL.md) | 从prompts.chat注册表搜索安装Skills | 自建 |
+| 📐 [constraints-skills-builder](skills/constraints-skills-builder/SKILL.md) | 从源码提取约束生成分层Skills知识体系 | 自建 |
+
+### 设计与UI/UX
+
+| Skill | 说明 | 来源 |
+|---|---|---|
+| 🎨 [frontend-ui-ux](skills/frontend-ui-ux/SKILL.md) | 设计师转开发角色，无设计稿下的UI/UX设计 | 自建 |
+| 🖼️ [ip-as-logo](skills/platform-specific/ip-as-logo/SKILL.md) | 极简IP角色方形图片生成 | 自建 |
+
+### 文档处理
+
+| Skill | 说明 | 来源 |
+|---|---|---|
+| 📊 [mermaid-to-png](skills/MermaidToPNGSkills/SKILL.md) | Mermaid代码块批量渲染为PNG图片 | 自建 |
 
 ---
 
