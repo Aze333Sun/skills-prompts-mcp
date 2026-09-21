@@ -149,6 +149,7 @@
 | Skill | 说明 | 来源 |
 |---|---|---|
 | 📝 [docx-simple](skills/docx-simple/SKILL.md) | Word 文档生成与编辑（简化版；完整版见 collected `docx`） | 自建 |
+| 📄 [markdownToWord](skills/markdownToWord/SKILL.md) | Markdown（含 Mermaid 图表）→ 中国联通模板样式 .docx 方案设计说明书 | 自建 |
 
 ### 自建 · 工程/通用
 

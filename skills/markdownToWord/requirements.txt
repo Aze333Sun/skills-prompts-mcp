@@ -1,0 +1,14 @@
+# markdownToWord skill 依赖
+# 在项目根目录（含 .trae 的目录）执行：
+#   pip install -r .trae/skills/markdownToWord/requirements.txt
+
+# Markdown -> .docx 转换（md2docx.py 必须）
+python-docx>=1.1.0
+
+# Mermaid 代码块 -> PNG 渲染（render_mermaid.py 在线模式必须）
+# 注意：在线模式（默认）调用 mermaid.ink 服务，需联网，图表文本上传第三方。
+# 离线/内网/敏感业务请使用本地模式（--mode local），额外安装：
+#   pip install playwright
+#   playwright install chromium
+# 首次本地渲染会自动缓存 mermaid.min.js 到 assets/，之后完全离线可用。
+mermaid-py>=0.1.3
