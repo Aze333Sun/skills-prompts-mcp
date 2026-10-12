@@ -1,6 +1,6 @@
 ---
 name: character-management
-description: This skill should be used when the user asks to "create a character", "update a character", "add a character", "build a family tree", "character relationships", "character timeline", "character arc", "character profile", or needs to manage characters in a story project.
+description: "Use when the user asks to \"create a character\", \"update a character\", \"add a character\", \"build a family tree\", \"character relationships\", \"character timeline\", \"character arc\", \"character profile\", or needs to manage characters in a story project."
 ---
 
 # Character Management

@@ -1,6 +1,6 @@
 ---
 name: chapter-writing
-description: This skill should be used when the user asks to "write a chapter", "next chapter", "chapter outline", "draft chapter", "continue the story", "write a scene", "outline a chapter", or wants to write prose for a story project.
+description: "Use when the user asks to \"write a chapter\", \"next chapter\", \"chapter outline\", \"draft chapter\", \"continue the story\", \"write a scene\", \"outline a chapter\", or wants to write prose for a story project."
 ---
 
 # Chapter Writing

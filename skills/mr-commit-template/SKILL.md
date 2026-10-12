@@ -1,6 +1,6 @@
 ---
 name: "mr-commit-template"
-description: "Use when committing code, creating PRs, or generating MR descriptions with code review and commit record archiving. Pre-commit workflow with structured review checklist."
+description: "Use when committing code or creating PRs in an environment without OpenCodeReview (OCR), for manual checklist-based review scoring, MR description generation, and commit record archiving. Do NOT use when OCR is installed (code-review-workflow), for standalone code review without commit flow (code-review), or OCR installation (opencode-review)."
 effort: high
 ---
 

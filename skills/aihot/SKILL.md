@@ -1,6 +1,7 @@
 ---
 name: aihot
-description: AI HOT (aihot.virxact.com) 中文 AI 资讯查询 Skill。当用户想知道"今天 AI 圈有什么"、"AI 日报"、"AI HOT"、"AI 资讯"、"AI 热点"、"最近 AI"、"OpenAI/Anthropic/Google 最近发布了什么"、"AI hot today"、"AI news today"、"看一下 AI 行业动态"、"今天有什么大模型发布"、"昨天 AI 圈"、"看下精选条目"、"AI HOT 精选"、"最近一周的 AI 论文"、"AI 模型发布"、"AI 产品发布"、"AI 行业动态"、"AI 技巧与观点" 等任何中文 AI 资讯查询时使用。即使用户只说"AI 圈"、"AI 新闻"、"AI 日报"，或者只是问"今天发生了什么"且上下文是 AI / 大模型 / LLM / 创业领域，也应该触发本 Skill。Skill 会直接 curl 公开 REST API 拉数据并整理成中文 markdown 简报，不需要用户配置任何 API Key 或 MCP server。**不要 undertrigger**——用户问 AI 资讯而你不调本 Skill 就是把过时的训练数据当作今日新闻，对用户有害。
+description: |
+  Use when 查询中文 AI 资讯：今天 AI 圈有什么、AI 日报、AI HOT、AI 资讯、AI 热点、AI 新闻、最近 AI、OpenAI/Anthropic/Google 最近发布了什么、AI hot today、AI news today、AI 行业动态、大模型发布、AI 论文、AI 产品发布、AI 技巧与观点，或问"今天发生了什么"而上下文是 AI / 大模型 / LLM / 创业领域。Skill 直接 curl 公开 REST API 拉数据整理成中文 markdown 简报，无需 API Key 或 MCP server。**不要 undertrigger**——用户问 AI 资讯而不调本 Skill 就是把过时的训练数据当作今日新闻，对用户有害。
 ---
 
 # AI HOT Skill

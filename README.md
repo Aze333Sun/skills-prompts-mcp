@@ -8,8 +8,8 @@
 
 ```
 .
-├── skills/          # 34 个 Agent Skills（SKILL.md 标准格式）
-├── skills-collected/ # 27 个社区收集的 Skills
+├── skills/          # 30 个 Agent Skills（SKILL.md 标准格式）
+├── skills/skills-collected/ # 27 个社区收集的 Skills
 ├── prompts/         # 独立提示词（复制粘贴即用）
 ├── mcp/             # MCP 服务器配置
 ├── scripts/         # 门禁检查脚本
@@ -33,7 +33,8 @@
 **检查规则：**
 - YAML frontmatter 必须存在
 - `name` 字段格式正确（仅字母/数字/连字符）
-- `description` 以 "Use when..." 开头
+- `name` 全仓库唯一（重复会导致 Skill 加载冲突，直接阻断提交）
+- `description` 以 "Use when..." 开头（`skills-collected/` 为只读上游副本，跳过格式规则）
 - 包含 When to Use、Quick Reference、Common Mistakes 标准章节
 
 ---
@@ -51,7 +52,7 @@
 | 🧪 [webapp-testing](skills/skills-collected/webapp-testing/SKILL.md) | Playwright 驱动的 Web 应用测试与调试 | [anthropics/skills](https://github.com/anthropics/skills) |
 | 🎨 [frontend-design](skills/skills-collected/frontend-design/SKILL.md) | 生产级前端界面设计，告别"AI 味"审美 | [anthropics/skills](https://github.com/anthropics/skills) |
 | 📄 [pdf](skills/skills-collected/pdf/SKILL.md) | PDF 全能处理：读取、创建、合并、拆分、表单、OCR | [anthropics/skills](https://github.com/anthropics/skills) |
-| 📝 [docx](skills/docx/SKILL.md) | Word 文档生成与编辑，支持修订、批注、格式保留 | [anthropics/skills](https://github.com/anthropics/skills) |
+| 📝 [docx](skills/skills-collected/docx/SKILL.md) | Word 文档生成与编辑，支持修订、批注、格式保留 | [anthropics/skills](https://github.com/anthropics/skills) |
 | 📊 [pptx](skills/skills-collected/pptx/SKILL.md) | PowerPoint 幻灯片创建与编辑 | [anthropics/skills](https://github.com/anthropics/skills) |
 | 📈 [xlsx](skills/skills-collected/xlsx/SKILL.md) | Excel 电子表格创建、编辑、清洗、图表 | [anthropics/skills](https://github.com/anthropics/skills) |
 | 🏷️ [brand-guidelines](skills/skills-collected/brand-guidelines/SKILL.md) | 品牌视觉规范：颜色、字体、风格一致性 | [anthropics/skills](https://github.com/anthropics/skills) |
@@ -100,6 +101,18 @@
 | 📚 [bible-merger](skills/bible-merger/SKILL.md) | 合并多源设定文件为统一的故事圣经 | [Claude-Book](https://github.com/ThomasHoussin/Claude-Book) |
 | 🎨 [perplexity-improver](skills/skills-collected/perplexity-improver/SKILL.md) | 降低 AI 痕迹，提升文风自然度 | [Claude-Book](https://github.com/ThomasHoussin/Claude-Book) |
 | 🇨🇳 [chinese-webnovel](skills/chinese-webnovel/SKILL.md) | 中文网文全流程：选材/构思/分卷/章纲/去AI味 | [Chinese-WebNovel-Skill](https://github.com/Tomsawyerhu/Chinese-WebNovel-Skill) |
+| 📖 [novel-writer](skills/novel-writer/SKILL.md) | 长篇网文通用框架：选题→黄金三章→章纲→逐章→去AI味 | 自建 |
+| 🍅 [fanqie-novel-writer](skills/fanqie-novel-writer/SKILL.md) | 番茄平台特化：推荐机制/爽点密度/广告变现 | 自建 |
+| 🍅 [fanqie-male-writer](skills/fanqie-male-writer/SKILL.md) | 番茄男频：玄幻/都市重生/系统流/赘婿流 | 自建 |
+| 🍅 [fanqie-female-writer](skills/fanqie-female-writer/SKILL.md) | 番茄女频：言情/古言/重生复仇/甜宠总裁 | 自建 |
+
+### 内容创作（公众号 / 头条）
+
+| Skill | 说明 | 来源 |
+|---|---|---|
+| 📱 [wechat-writer](skills/wechat-writer/SKILL.md) | 微信公众号通用写作：推文/长文/排版/标题优化 | 自建 |
+| 📰 [toutiao-writer](skills/toutiao-writer/SKILL.md) | 今日头条信息流写作：头条体/微头条/爆款标题 | 自建 |
+| 🤖 [toutiao-ai-education](skills/toutiao-ai-education/SKILL.md) | 头条 AI 教育赛道：AI教程/工具测评/AI副业 | 自建 |
 
 ### 代码审查与工作流
 
@@ -115,9 +128,10 @@
 
 | Skill | 说明 | 来源 |
 |---|---|---|
-| 🛠️ [create-skill](skills/create-skill/SKILL.md) | Skill创建/改进/评估工具包，支持基准测试 | 自建 |
 | 🔍 [skill-lookup](skills/skill-lookup/SKILL.md) | 从prompts.chat注册表搜索安装Skills | 自建 |
 | 📐 [constraints-skills-builder](skills/constraints-skills-builder/SKILL.md) | 从源码提取约束生成分层Skills知识体系 | 自建 |
+
+> Skill 创建/评估功能见上方 Anthropic 官方 [skill-creator](skills/skills-collected/skill-creator/SKILL.md)（原 `create-skill` 为其本地化副本，已合并去重）。
 
 ### 设计与UI/UX
 
@@ -131,6 +145,17 @@
 | Skill | 说明 | 来源 |
 |---|---|---|
 | 📊 [mermaid-to-png](skills/MermaidToPNGSkills/SKILL.md) | Mermaid代码块批量渲染为PNG图片 | 自建 |
+
+### 产品与需求（社区收集）
+
+| Skill | 说明 | 来源 |
+|---|---|---|
+| 🔨 [feature-forge](skills/skills-collected/feature-forge/SKILL.md) | 需求工作坊：EARS格式需求/用户故事/验收标准 | 社区收集 |
+| 🔍 [spec-miner](skills/skills-collected/spec-miner/SKILL.md) | 从遗留/无文档代码库逆向提取规格与架构文档 | 社区收集 |
+| 🧭 [product-lens](skills/skills-collected/product-lens/SKILL.md) | 构建前验证"为什么"：产品诊断与方向压力测试 | 社区收集 |
+| 🧩 [product-capability](skills/skills-collected/product-capability/SKILL.md) | PRD意图转实现级能力计划：约束/接口/未决项 | 社区收集 |
+| 💡 [market-insight](skills/skills-collected/market-insight/SKILL.md) | 用户需求洞察与产品机会分析 | 社区收集 |
+| 🎼 [plan-orchestrate](skills/skills-collected/plan-orchestrate/SKILL.md) | 读取计划文档，按步骤生成 agent 编排链提示词 | 社区收集 |
 
 ---
 
@@ -199,6 +224,15 @@ npx skills add anthropics/skills --skill pdf
 # Claude Code 插件市场
 /plugin marketplace add anthropics/skills
 ```
+
+**存储路径**（按你使用的 AI 编码助手选择对应路径）：
+
+| Type | Comate | Claude Code | OpenCode | Scope |
+|------|--------|-------------|----------|-------|
+| Personal | `~/.comate/skills/skill-name/` | `~/.claude/skills/skill-name/` | `~/.config/opencode/skills/skill-name/` | 所有项目可用 |
+| Project | `.comate/skills/skill-name/` | `.claude/skills/skill-name/` | `.opencode/skills/skill-name/` | 仅当前仓库共享 |
+
+> 新增 Skill 必须是所选 skills 根目录的直接子目录——嵌套在其他 Skill 目录内的 Skill 会被视为父 Skill 的资源文件，不会作为已安装 Skill 出现。
 
 ---
 

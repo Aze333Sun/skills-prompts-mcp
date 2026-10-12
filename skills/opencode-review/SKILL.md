@@ -1,6 +1,6 @@
 ---
 name: opencode-review
-description: "Use when installing or configuring OpenCodeReview (OCR), running code reviews, or needing AI-assisted code review capabilities."
+description: "Use when installing, configuring, or troubleshooting OpenCodeReview (OCR) itself — npm install, provider/model config, delegation mode, rule files, or 'ocr: command not found'. For using OCR inside a commit flow use code-review-workflow; for reviewing code without commit flow use code-review."
 effort: medium
 ---
 

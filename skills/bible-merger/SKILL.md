@@ -1,6 +1,6 @@
 ---
 name: bible-merger
-description: Merge multiple book analyses into a unified bible. Use after analyzing several books from a series to consolidate characters, style patterns, and structure into a single canonical reference.
+description: "Use when merging multiple book analyses into a unified bible after analyzing several books from a series, to consolidate characters, style patterns, and structure into a single canonical reference."
 ---
 
 # Bible Merger

@@ -1,6 +1,6 @@
 ---
 name: code-review-workflow
-description: "Use when committing code, creating PRs, or performing pre-commit code reviews. Integrates OCR automated review with MR description generation and commit record archiving."
+description: "Use when committing code or creating PRs in an environment where OpenCodeReview (OCR) is installed, for OCR-driven pre-commit review with MR description generation and commit record archiving. Do NOT use for manual checklist review (mr-commit-template), standalone code review without commit flow (code-review), or OCR installation/configuration (opencode-review)."
 effort: high
 ---
 

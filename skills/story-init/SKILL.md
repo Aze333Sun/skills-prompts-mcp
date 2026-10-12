@@ -1,6 +1,6 @@
 ---
 name: story-init
-description: This skill should be used when the user asks to "start a new story", "initialize a story project", "create a story", "new book", "set up a story", or wants to begin a new fiction writing project from scratch.
+description: "Use when the user asks to \"start a new story\", \"initialize a story project\", \"create a story\", \"new book\", \"set up a story\", or wants to begin a new fiction writing project from scratch."
 ---
 
 # Story Initialization
