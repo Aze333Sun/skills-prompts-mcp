@@ -1,3 +1,4 @@
+<!-- 关联 Skill：无（本 Prompt 暂无对应 Skill，保留为独立模板） -->
 # DevOps / CI/CD 提示词
 
 ## 1. Dockerfile 优化

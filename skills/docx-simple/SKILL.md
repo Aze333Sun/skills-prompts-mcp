@@ -1,5 +1,5 @@
 ---
-name: docx
+name: docx-simple
 description: "Use when creating, editing, reading, or analyzing .docx files, working with tracked changes, adding comments, or extracting text from Word documents. This is a simplified version; for advanced features (tables, images, TOC, validation scripts), see skills-collected/docx."
 source: anthropics/skills
 license: Apache-2.0

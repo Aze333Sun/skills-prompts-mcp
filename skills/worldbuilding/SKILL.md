@@ -1,6 +1,6 @@
 ---
 name: worldbuilding
-description: This skill should be used when the user asks to "create a location", "add a location", "magic system", "political system", "build the world", "add culture", "world history", "technology system", "religion", "economy", or wants to develop any aspect of a story's world and setting.
+description: "Use when the user wants to create or expand a story's world and setting — locations, or systems like magic, politics, technology, religion, economy, culture, or world history. Stores elements as cross-referenced markdown files."
 ---
 
 # Worldbuilding
@@ -59,3 +59,27 @@ A story project must already exist (created via the story-init skill). Verify by
 - **`references/location-template.md`** - Template for location files
 - **`references/system-template.md`** - Template for system files
 - **`references/world-element-types.md`** - Detailed prompts for each system type (magic, political, technology, religion, economic, military, social)
+
+## When to Use
+
+- 用户要创建或扩展故事的地点（location）
+- 用户要创建魔法 / 政治 / 科技 / 宗教 / 经济 / 军事 / 社会等系统（system）
+- 用户要添加文化、世界历史等世界设定（world history / culture）
+- 用户要更新已有世界元素，或与角色做交叉引用
+- 前提：story 项目已存在（根目录含 `story.md`，通常由 story-init 创建）
+
+## Quick Reference
+
+| 操作 | 说明 |
+|------|------|
+| 创建地点 | 读 `story.md` 与 `_index.md` → 对话构建 → 存 `worldbuilding/locations/{name-kebab}.md` → 更新 `_index.md` |
+| 创建系统 | 读 `references/world-element-types.md` 提示 → 存 `worldbuilding/systems/{name-kebab}.md` |
+| 更新元素 | 读原文件改 → 同步交叉引用与 `_index.md` |
+| 交叉引用 | 地点 via `notable-characters`；系统 via character tags；章节 frontmatter `locations` 回链 |
+
+## Common Mistakes
+
+- ❌ story 项目尚未创建就直接建世界 → ✅ 先确认根目录 `story.md` 存在（经 story-init）
+- ❌ 只建元素却不同步 `_index.md` → ✅ 每次新增 / 改名 / 改状态都更新索引表
+- ❌ 世界元素不与角色交叉引用 → ✅ 用 `notable-characters` / character tags 互链
+- ❌ 套模板却跳过对话挖掘细节 → ✅ 先通过对话覆盖物理 / 历史 / 文化 / 特征 / 时间线状态

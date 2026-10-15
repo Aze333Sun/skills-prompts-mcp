@@ -1,11 +1,6 @@
 ---
 name: hv-analysis
-description: |
-  横纵分析法（Horizontal-Vertical Analysis）深度研究Skill。由数字生命卡兹克提出，融合了索绪尔的历时-共时分析、社会科学的纵向-横截面研究设计、商学院案例研究法与竞争战略分析的核心思想。
-  当用户想要系统性研究一个产品、公司、概念、技术或人物时使用。核心是双轴分析：纵轴追踪从诞生到当下的完整生命历程（以叙事故事呈现），横轴在当下时间截面上与竞品/同类进行系统性横向对比，最后交叉两条轴产出独到洞察。最终产出一份排版精美的PDF研究报告。
-  触发词包括但不限于：横纵分析、研究一下、帮我分析、深度研究、做个研究、调研一下、竞品分析、帮我看看这个东西怎么样、这个产品/公司/概念是怎么回事、帮我摸清楚、帮我搞懂、帮我做个deep research。
-  即使用户只是说"帮我了解一下XX"或"XX是什么来头"，只要上下文暗示需要系统性的深度研究（而非简单的概念解释），都应该触发。也适用于用户丢来一个产品名、公司名、技术名词说"帮我研究一下这个"的场景。
-  不要用于简单的名词解释（用户只是问"XX是什么"）、不要用于公众号写作（那个用khazix-writer）、不要用于纯标题摘要生成（用wechat-title）。
+description: "Use when conducting systematic deep research (横纵分析法) on a product, company, concept, technology, or person. Traces its full history on the longitudinal axis and compares it with peers on the cross-sectional axis, then outputs a typeset PDF report. Triggers: 横纵分析/深度研究/竞品分析/帮我分析."
 ---
 
 # 横纵分析法深度研究
@@ -321,3 +316,27 @@ PDF文件命名为 `[研究对象名称]_横纵分析报告.pdf`，保存到用�
 - [ ] 搜不到的信息诚实标注了「暂缺」，没有编造？
 - [ ] PDF排版美观、结构清晰、可读性好？
 - [ ] 总字数在 10,000-30,000 字的范围内？
+
+## When to Use
+
+- 用户要系统性深度研究一个产品、公司、概念、技术或人物（触发词：横纵分析/研究一下/深度研究/竞品分析/帮我分析）
+- 需要双轴分析：纵轴追完整生命历程（叙事呈现），横轴与竞品/同类横向对比，交汇产出洞察
+- 最终要产出一份排版精美的 PDF 研究报告（自带 `scripts/md_to_pdf.py`）
+
+## Quick Reference
+
+| 操作 | 说明 |
+|------|------|
+| 第一步 联网收集 | 用子Agent并行搜纵向/横向信息，学术对象必查 arxiv |
+| 第二步 纵向 | 沿时间轴还原起源→演进→决策逻辑，6000-15000字叙事 |
+| 第三步 横向 | 当前切面与竞品对比（场景A/B/C），3000-10000字 |
+| 第四步 交汇 | 历史×竞争交叉，给三剧本推演，1500-3000字 |
+| 第五步 转PDF | `python scripts/md_to_pdf.py input.md out.pdf --title "..." --author "数字生命卡兹克"` |
+| 依赖安装 | `pip install weasyprint markdown --break-system-packages` |
+
+## Common Mistakes
+
+- ❌ 信息只靠已有知识不联网 → ✅ 必须 WebSearch/WebFetch 并行收集，宁可多搜
+- ❌ 纵向写成年表流水账 → ✅ 叙事驱动，还原决策逻辑与因果脉络
+- ❌ 横轴写成参数对照表 → ✅ 讲清每个竞品"活成了什么样"、用户真实选择理由
+- ❌ 编造搜不到的信息 → ✅ 诚实标注「该信息暂缺」，绝不编造

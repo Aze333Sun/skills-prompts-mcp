@@ -1,6 +1,6 @@
 ---
 name: story-init
-description: This skill should be used when the user asks to "start a new story", "initialize a story project", "create a story", "new book", "set up a story", or wants to begin a new fiction writing project from scratch.
+description: "Use when starting a new fiction project from scratch — initializing a story's folder structure (story bible, character registry, worldbuilding index, plot structure, chapter tracker) as cross-referenced markdown files. Triggers on 'start a new story', 'initialize a story project', 'new book', 'set up a story'."
 ---
 
 # Story Initialization
@@ -193,3 +193,21 @@ These conventions apply across ALL story skills:
 - **`story.md`** is the top-level bible read by all skills for context
 - **Bidirectional cross-links** - when referencing another entity, update both files
 - **Character identifiers** use the kebab-case filename without extension (e.g., `sera-voss`)
+
+## Quick Reference
+
+| 操作 | 说明 |
+|------|------|
+| 收集故事信息 | 标题 / 类型与子类型 / 2-3句简介 / 时代 / 2-4主题 / POV / 时态 |
+| 创建目录结构 | `{story-title-kebab}/` 含 `story.md`、`characters/`、`worldbuilding/`、`plot/`、`chapters/`，各带 `_index.md` |
+| 填充 story.md | 写 YAML frontmatter（title/genre/sub-genre/setting-era/themes/pov/tense）+ Synopsis / Tone&Style / Notes |
+| 初始化注册表 | `characters/_index.md`、`worldbuilding/_index.md`、`plot/_index.md`、`plot/timeline.md`、`chapters/_index.md` 写入空注册表 |
+| 建议下一步 | 加角色（character-management）/ 世界观（worldbuilding）/ 情节结构（plot-structure）|
+
+## Common Mistakes
+
+- ❌ 在已有项目里用本 Skill 新增内容 → ✅ 已存在的项目改用对应领域 Skill（character-management、worldbuilding、plot-structure 等）
+- ❌ 实体文件名不用 kebab-case → ✅ 所有实体文件一律 kebab-case（如 `sera-voss.md`），ID 用不带扩展名的文件名
+- ❌ 文件缺少 YAML frontmatter → ✅ 每个文件都带 frontmatter 元数据
+- ❌ 引用实体不更新双向链接 → ✅ 引用另一实体时同步更新双方文件
+- ❌ 把 `_index.md` 当成普通笔记 → ✅ `_index.md` 是各领域权威注册表，保持为空注册表模板待填

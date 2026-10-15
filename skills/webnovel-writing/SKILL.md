@@ -347,3 +347,28 @@ python3 scripts/search_corpus_examples.py --keyword '真假千金' --limit 10
   [references/webnovel_corpus_guide.md](references/webnovel_corpus_guide.md)
 - 检索脚本：
   [scripts/search_corpus_examples.py](scripts/search_corpus_examples.py)
+
+## When to Use
+
+- 用户要规划 / 起草 / 续写 / 改写中文网文
+- 任务涉及选题、故事引擎、卖点 hook、开头成交、章纲、节奏、去 AI 味
+- 用户给了目标小说的简要描述，需要逐层产出（题材诊断 → premise → 章纲 → 单章 → 审查）
+
+## Quick Reference
+
+| 操作 | 说明 |
+|------|------|
+| 前置规划 | `concept_planning` → 题材 / 消费点 / hook / premise / 故事引擎 / 第一卷 |
+| 开篇成交 | `opening` → 前 300-500 字给抓手，前 6000 字立主角与卖点 |
+| 章纲 | `volume_outline` → 黄金三章、前 10-20 章程纲 |
+| 逐章执行 | `plot_logic` / `character_consistency` / `transition` / `dialogue` / `chapter_ending` / `anti_ai_voice` |
+| 完稿审查 | `consistency_review` → 六种一致性（剧情 / 人物 / 情绪 / 身体 / 场景 / 章末） |
+| 语料检索 | `python3 scripts/search_corpus_examples.py --type '开头钩子' --tag '危机压身' --limit 5` |
+
+## Common Mistakes
+
+- ❌ 把结构问题误修成文风问题 → ✅ 先修 `plot_logic` / `character_consistency` 等底层因果链
+- ❌ 只给世界观不给前几章方案 → ✅ 先 `concept_planning` 再 `opening` / `volume_outline`
+- ❌ 每章写完直接交稿 → ✅ 必须过 `consistency_review` 六种一致性
+- ❌ 对白一个腔调、像说明书 → ✅ 调用 `anti_ai_voice`，人物说话带身份感
+- ❌ 默认慢热、把模仿当照抄 → ✅ 前 6000 字尽快立卖点，借结构而非照搬

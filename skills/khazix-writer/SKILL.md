@@ -1,7 +1,6 @@
 ---
 name: khazix-writer
-description: |
-  数字生命卡兹克（Khazix）的公众号长文写作skill。当用户需要撰写公众号文章、写稿子、续写文章、根据素材产出长文时使用。触发词包括但不限于：写文章、写稿子、帮我写、续写、扩写、公众号文章、长文、出稿、按我的风格写。即使用户只是说"帮我把这个写成文章"或"用我的风格写一下"，只要上下文涉及内容创作和公众号输出，都应该触发。也适用于用户丢过来一个PDF、brief、新闻链接、语音转文字或任何素材说"帮我写篇文章"的场景。不要用于短内容（小红书帖子、推特、朋友圈）或纯标题摘要生成（那个用wechat-title skill）。
+description: "Use when writing long-form WeChat official-account articles in the Khazix (数字生命卡兹克) style — drafting, continuing, or expanding articles from materials like PDFs, briefs, or links. Triggers: 写文章/写稿子/续写/公众号文章/长文. Not for short posts or title summaries (use wechat-title)."
 ---
 
 # 卡兹克公众号长文写作
@@ -412,3 +411,27 @@ AI：按四层自检体系检查 → 输出修改建议
 
 更详细的风格示例和修改对比，参考 `references/style_examples.md`。
 完整的内容方法论（选题来源、选题分类、过往爆款案例、创意案例工作法），参考 `references/content_methodology.md`。
+
+## When to Use
+
+- 用户要写公众号长文、写稿子、续写/扩写，或以卡兹克（数字生命卡兹克）风格产出长文
+- 输入可为产品brief、新闻链接、PDF、语音转文字或任何素材（触发词：写文章/写稿子/续写/公众号文章/长文）
+- 不适用于短内容（小红书/推特/朋友圈）或纯标题摘要（用 wechat-title）
+
+## Quick Reference
+
+| 操作 | 说明 |
+|------|------|
+| 选题判断 | 用 HKR 质检：Happy 有趣 / Knowledge 有料 / Resonance 戳情绪 |
+| AI 边界 | AI补背景/找证据类比/按角度扩写；人给第一手经历+核心创意+情绪 |
+| 写作 | 五原型（调查/体验/现象/工具/方法论），节奏感+扣主线句+回环呼应 |
+| 自检 L1 | 禁用词/禁用标点（冒号破折号双引号）/套话/空泛工具名扫描零命中 |
+| 自检 L2-L4 | 风格一致→内容质量→活人感终审，四层全过才达标 |
+| 固定尾部 | 结尾加"点赞在看转发三连+星标"，作者：卡兹克 |
+
+## Common Mistakes
+
+- ❌ 开头宏大叙事"在当今AI时代" → ✅ 从具体当下事件/场景切入，第一句造"然后呢"
+- ❌ 用冒号、破折号、双引号 → ✅ 全用逗号，引用用「」或直接不加引号
+- ❌ 套话"综上所述/值得注意的是/说白了" → ✅ 用口语转场，承认主观（"我觉得"）
+- ❌ 编造"比如有一次…"假设场景 → ✅ 用真实正在发生的细节，没有就坦白没试过

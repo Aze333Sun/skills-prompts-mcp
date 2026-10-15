@@ -1,9 +1,15 @@
 ---
 name: character-management
-description: This skill should be used when the user asks to "create a character", "update a character", "add a character", "build a family tree", "character relationships", "character timeline", "character arc", "character profile", or needs to manage characters in a story project.
+description: "Use when the user asks to create, update, or manage characters in a story project. Builds rich character profiles with YAML frontmatter, family trees, relationship maps, and cross-references with other story elements."
 ---
 
 # Character Management
+
+## When to Use
+
+- 用户要求创建、更新或管理故事项目中的角色
+- 用户要建家谱、角色关系图、角色时间线或角色弧
+- 故事项目已通过 story-init 创建（存在 story.md）
 
 ## Overview
 
@@ -73,3 +79,21 @@ Indent children under parents. Note marriages/partnerships inline.
 
 - **`references/character-template.md`** - Full blank template for character profiles
 - **`references/relationship-types.md`** - Complete relationship type reference with inverse pairs
+
+## Quick Reference
+
+| 操作 | 说明 |
+|------|------|
+| 创建角色 | 读 story.md + _index.md，对话补全档案，写入 characters/{name-kebab}.md |
+| 更新角色 | 改文件 + 双向更新关系 + 更新 _index 注册表 |
+| 管理关系 | 加关系条目到双方 frontmatter + 更新 Relationship Map |
+| 家谱 | 在 _index.md 的 Family Trees 下按父子缩进维护 |
+| 交叉引用 | 角色在 worldbuilding/plot 中被引用时双向链接 |
+
+## Common Mistakes
+
+- ❌ 关系只写在单方 frontmatter → ✅ 双向添加 inverse 关系到双方 + 更新 Relationship Map
+- ❌ 不先确认 story.md 存在就建角色 → ✅ 先验证项目已通过 story-init 创建
+- ❌ 家谱不标来源/婚姻 → ✅ 在 Family Trees 内联标注婚姻/伴侣，子级缩进父级下
+- ❌ 跨项目标签不统一（如 magic-user） → ✅ 全项目用完全一致的角色标签
+- ❌ 改关系后忘更新 _index → ✅ 角色/状态变化时同步更新 _index.md 注册表

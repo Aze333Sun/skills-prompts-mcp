@@ -24,7 +24,7 @@ curl -sH "User-Agent: $UA" "https://aihot.virxact.com/api/public/daily"
 
 > **范围澄清**：这条 UA 要求**只针对 `/api/public/*` API 端点**。`/aihot-skill/{install.sh,SKILL.md,README.md}` 安装入口 nginx 上**特意豁免** UA 黑名单（设计前提就是给 `curl -fsSL ... | bash` 一行装用），用 default curl UA 直通 200。不要把"先决条件"误推广到所有 aihot.virxact.com 路径。
 
-## 什么时候用
+## When to Use
 
 > **路由优先级（第一原则）**：**默认走精选** `items?mode=selected`——它是 AI HOT 每天精挑细选的"主菜单"，覆盖用户关心的事且数据新鲜。
 >
@@ -49,7 +49,7 @@ curl -sH "User-Agent: $UA" "https://aihot.virxact.com/api/public/daily"
 
 通用启发：**用户问的是"现在的 AI 行业事实"，不要凭训练数据脑补，永远走 API**。即使你"觉得"知道答案，也要查一遍——AI HOT 比你的训练截止日新得多，且角度聚焦中文创业者关心的话题。
 
-## 端点速览
+## Quick Reference
 
 | 端点 | 用途 | 主要参数 |
 |---|---|---|
@@ -414,3 +414,15 @@ curl -sH "User-Agent: $UA" "https://aihot.virxact.com/api/public/items?mode=sele
 - **不要在用户输出里暴露端点路径 / raw 参数 / 限流 / 缓存 TTL / cursor / hasNext 等基础设施细节** — 这些是给开发者看的，用户看不懂。详见上方"给用户的输出格式 → 副标题／元信息只写人话"
 - **不要在压缩 / 跨日 / 跨版块合并输出时丢掉每条的 sourceUrl** — 即使你为篇幅把 3 个日报合并成 5 类总结，每条 item 也必须保留 url（标题后或单独一行）。用户看到一条没 URL 就追溯不到原文，这条信息等于不可信
 - **不要把"端点路径 / 调用细节"作为输出的引用源** — 引用源就写 `<source>`（OpenAI 官网 / Anthropic Newsroom / X：Berry Xia 这种），不是 `GET /api/public/items?...`
+
+## Common Mistakes
+
+- ❌ 调 `/api/public/*` 时不带浏览器 User-Agent → ✅ 所有 curl 加 `-H "User-Agent: $UA"`，否则被 403 挡
+- ❌ 把"今天 AI 圈"等宽问题默认路由到 daily → ✅ 默认 `mode=selected` + `since=<语义窗>`，仅用户明确说"日报"才走 daily
+- ❌ 用户没说"全部"就默认 `mode=all` → ✅ 默认 `mode=selected`，仅用户明确点单"全部/所有/全量"才切 all
+- ❌ 凭训练数据脑补 AI 行业事实 → ✅ 永远走 API 查询，AI HOT 比训练截止新
+- ❌ 公司/关键词查询走"拉一批 + 客户端 jq grep" → ✅ 用 server-side `?q=<关键词>`，覆盖全池
+- ❌ 给用户输出暴露端点路径/raw 参数/限流/cursor → ✅ 只写人话级元信息（时间窗、条数、倒序）
+- ❌ 并发猛拉或高频轮询 → ✅ 串行调用 + 自然间隔（限流 600 req/min/IP）
+- ❌ 尝试解析/递增/复用 cursor → ✅ 把 cursor 当不透明 token 原样传入 `cursor` 参数
+- ❌ 把 LLM 生成的 `summary` 当原文引用 → ✅ 引用需回 `url`/`sourceUrl` 核对

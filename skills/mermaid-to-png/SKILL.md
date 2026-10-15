@@ -1,19 +1,13 @@
 ---
 name: mermaid-to-png
-description: "Use when rendering Mermaid diagrams from Markdown files to PNG images, batch exporting architecture diagrams or flowcharts, or processing .mmd files."
+description: "将 Markdown 中的 Mermaid 代码块批量渲染为 PNG 图片"
+when_to_use: "用户要求将 Mermaid 图表渲染为图片、从 Markdown 提取图表生成 PNG、或批量导出架构图/流程图时使用"
 effort: medium
 ---
 
 # Mermaid 图表渲染 PNG 技能
 
 将 Markdown 文件中的 Mermaid 代码块解析并渲染为 PNG 图片。支持流程图、时序图、状态图、类图、ER 图、甘特图、饼图。
-
-## When to Use
-
-- 用户要求将 Mermaid 图表渲染为 PNG/SVG 图片
-- 用户要求从 Markdown 文件批量提取并导出图表
-- 用户提到「渲染图表」「导出流程图」「生成架构图」
-- 用户要求处理 `.mmd` 或包含 Mermaid 代码块的文件
 
 ## 硬约束（必须遵守）
 
@@ -22,6 +16,13 @@ effort: medium
 3. **错误不吞没**：单个图表渲染失败时记录错误并继续下一个，最终汇总 OK/FAIL 数量，不得静默跳过。
 4. **禁止覆盖已有文件**：输出文件名冲突时追加序号或报错，不得直接覆盖。
 5. **不编造图表类型**：只渲染 Mermaid 语法支持的图表类型，不支持的类型停止并说明。
+
+## 触发条件（必须调用）
+
+- 用户要求将 Mermaid 图表渲染为 PNG/SVG 图片
+- 用户要求从 Markdown 文件批量提取并导出图表
+- 用户提到「渲染图表」「导出流程图」「生成架构图」
+- 用户要求处理 `.mmd` 或包含 Mermaid 代码块的文件
 
 ## 执行流程
 
@@ -98,23 +99,16 @@ python render_mermaid.py <输入.md> <输出目录> [-p 前缀] [-q]
 | 渲染超时 | 图表过于复杂 | 简化图表或拆分为多个小图 |
 | 图片模糊 | mermaid-py 默认 DPI | 如需高清可改用 mmdc（Mermaid CLI） |
 
-## Quick Reference
-
-| 操作 | 命令 |
-|------|------|
-| 渲染 | `python render_mermaid.py <输入.md> <输出目录>` |
-| 带前缀 | `python render_mermaid.py <输入.md> <输出目录> -p chart` |
-| 静默模式 | `python render_mermaid.py <输入.md> <输出目录> -q` |
-| 依赖安装 | `pip install mermaid-py` |
-
-## Common Mistakes
-
-- ❌ 中文显示为方块 → ✅ 安装中文字体（如微软雅黑、思源黑体）
-- ❌ 渲染超时 → ✅ 简化图表或拆分为多个小图
-- ❌ 覆盖已有文件 → ✅ 输出文件名冲突时追加序号
-
 ## 依赖安装
 
 ```bash
 pip install mermaid-py
+```
+
+验证：
+
+```python
+import mermaid as md
+from mermaid.graph import Graph
+print("mermaid-py installed OK")
 ```

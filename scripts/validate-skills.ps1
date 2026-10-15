@@ -15,9 +15,9 @@ $warnings = @()
 function Get-FilesToCheck {
     if ($StagedOnly) {
         $stagedFiles = git diff --cached --name-only --diff-filter=ACM 2>$null
-        return $stagedFiles | Where-Object { $_ -match "skills/.*/SKILL\.md$" }
+        return $stagedFiles | Where-Object { $_ -match "skills/.*/SKILL\.md$" -and $_ -notmatch "skills-collected" }
     } else {
-        return Get-ChildItem -Path $skillDir -Filter "SKILL.md" -Recurse | Select-Object -ExpandProperty FullName
+        return Get-ChildItem -Path $skillDir -Filter "SKILL.md" -Recurse | Where-Object { $_.FullName -notmatch "skills-collected" } | Select-Object -ExpandProperty FullName
     }
 }
 

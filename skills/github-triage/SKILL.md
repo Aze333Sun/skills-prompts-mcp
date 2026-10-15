@@ -1,33 +1,29 @@
 ---
 name: github-triage
-description: "Use when triaging GitHub issues and PRs, batch processing todo items, or clearing issue backlogs. Unified issue and PR processing with parallel background execution."
-effort: high
+description: "Unified GitHub triage for issues AND PRs. 1 item = 1 background task (category: free). Issues: answer questions from codebase, analyze bugs. PRs: review bugfixes, merge safe ones. All parallel, all background. Triggers: 'triage', 'triage issues', 'triage PRs', 'github triage'."
 ---
 
 # GitHub Triage — Unified Issue & PR Processor
 
 <role>
-You are a GitHub triage orchestrator. You fetch all open issues and PRs, classify each one, then spawn exactly 1 background subagent per item. Each subagent analyzes its item, takes action (comment/close/merge/report), and records results.
+You are a GitHub triage orchestrator. You fetch all open issues and PRs, classify each one, then spawn exactly 1 background subagent per item using `category="free"`. Each subagent analyzes its item, takes action (comment/close/merge/report), and records results via TaskCreate.
 </role>
 
-## When to Use
-
-- 用户要求分诊 GitHub issues/PRs
-- 批量处理待办事项
-- 清理 issue 积压
+---
 
 ## ARCHITECTURE
 
 ```
-1 issue or PR = 1 background subagent task
+1 issue or PR = 1 TaskCreate = 1 task(category="free", run_in_background=true)
 ```
 
 | Rule | Value |
 |------|-------|
-| Execution mode | Background / parallel |
+| Category for ALL subagents | `free` |
+| Execution mode | `run_in_background=true` |
 | Parallelism | ALL items launched simultaneously |
-| Result tracking | Each subagent records its findings |
-| Result collection | Polling loop for background tasks |
+| Result tracking | Each subagent calls `TaskCreate` with its findings |
+| Result collection | `background_output()` polling loop |
 
 ---
 
@@ -81,12 +77,13 @@ For each item, determine its type based on title, labels, and body content:
 
 ## PHASE 3: SPAWN 1 BACKGROUND TASK PER ITEM
 
-For EVERY item, spawn a background subagent.
+For EVERY item, create a TaskCreate entry first, then spawn a background task.
 
 ```
 For each item:
-  1. Spawn background subagent with the appropriate prompt template
-  2. Store mapping: item_number -> subagent task
+  1. TaskCreate(subject="Triage: #{number} {title}")
+  2. task(category="free", run_in_background=true, load_skills=[], prompt=SUBAGENT_PROMPT)
+  3. Store mapping: item_number -> { task_id, background_task_id }
 ```
 
 ---
@@ -119,7 +116,7 @@ YOUR JOB:
 
 IF YES (you found a clear, accurate answer):
   Step A: Write a helpful comment. The comment MUST:
-    - Start with exactly: [bot]
+    - Start with exactly: [sisyphus-bot]
     - Be warm, friendly, and thorough
     - Include specific file paths and code references
     - Include code snippets or config examples if helpful
@@ -142,7 +139,7 @@ IF NO (not enough info in codebase, or answer is uncertain):
 RULES:
 - NEVER guess. Only answer if the codebase clearly supports your answer.
 - NEVER make up file paths or function names.
-- The [bot] prefix is MANDATORY on every comment you post.
+- The [sisyphus-bot] prefix is MANDATORY on every comment you post.
 - Be genuinely helpful — imagine you're a senior maintainer who cares about the community.
 ```
 
@@ -175,7 +172,7 @@ YOUR JOB:
 
 OUTCOME A — CONFIRMED BUG (you found the problematic code):
   Step 1: Post a comment on the issue. The comment MUST:
-    - Start with exactly: [bot]
+    - Start with exactly: [sisyphus-bot]
     - Apologize sincerely for the inconvenience ("We're sorry you ran into this issue.")
     - Briefly acknowledge what the bug is
     - Say "We've identified the root cause and will work on a fix."
@@ -192,7 +189,7 @@ OUTCOME A — CONFIRMED BUG (you found the problematic code):
 OUTCOME B — NOT A BUG (user misunderstanding, provably correct behavior):
   ONLY choose this if you can RIGOROUSLY PROVE the behavior is correct.
   Step 1: Post a comment. The comment MUST:
-    - Start with exactly: [bot]
+    - Start with exactly: [sisyphus-bot]
     - Be kind and empathetic — never condescending
     - Explain clearly WHY the current behavior is correct
     - Include specific code references or documentation links
@@ -217,7 +214,7 @@ RULES:
 - NEVER guess at root causes. Only report CONFIRMED_BUG if you found the exact problematic code.
 - NEVER close bug issues yourself. Only comment.
 - For OUTCOME B (not a bug): you MUST have rigorous proof. If there's ANY doubt, choose OUTCOME C instead.
-- The [bot] prefix is MANDATORY on every comment.
+- The [sisyphus-bot] prefix is MANDATORY on every comment.
 - When apologizing, be genuine. The user took time to report this.
 ```
 
@@ -406,10 +403,11 @@ ABSOLUTE RULES:
 ## PHASE 4: COLLECT RESULTS & UPDATE TASKS
 
 <collection>
-Poll background tasks for each spawned subagent. As each completes:
+Poll `background_output()` for each spawned task. As each completes:
 
 1. Parse the subagent's report.
-2. Update the corresponding task with the results.
+2. Update the corresponding TaskCreate entry:
+   - `TaskUpdate(id=task_id, status="completed", description=FULL_REPORT_TEXT)`
 3. Stream the result to the user immediately — do not wait for all to finish.
 
 Track counters:
@@ -459,12 +457,15 @@ After all background tasks complete, produce a summary:
 
 | Violation | Severity |
 |-----------|----------|
+| Using any category other than `free` | CRITICAL |
 | Batching multiple items into one task | CRITICAL |
+| Using `run_in_background=false` | CRITICAL |
 | Subagent running `git checkout` on a PR branch | CRITICAL |
-| Posting comment without `[bot]` prefix | CRITICAL |
+| Posting comment without `[sisyphus-bot]` prefix | CRITICAL |
 | Merging a PR that doesn't meet ALL 6 conditions | CRITICAL |
 | Closing a bug issue (only comment, never close bugs) | HIGH |
 | Guessing at answers without codebase evidence | HIGH |
+| Not recording results via TaskCreate/TaskUpdate | HIGH |
 
 ---
 
@@ -472,25 +473,10 @@ After all background tasks complete, produce a summary:
 
 When invoked:
 
-1. Fetch all open issues + PRs via gh CLI (paginate if needed)
-2. Classify each item (ISSUE_QUESTION, ISSUE_BUG, ISSUE_FEATURE, PR_BUGFIX, etc.)
-3. For EACH item: spawn a background subagent with the appropriate prompt template
-4. Poll background tasks — stream results as they arrive
-5. Produce final summary report
-
-## Quick Reference
-
-| 类型 | 检测方式 | 处理 |
-|------|----------|------|
-| ISSUE_QUESTION | 标题含[Question]/? | 回答+关闭 |
-| ISSUE_BUG | 标题含[Bug]/Bug: | 分析+评论 |
-| ISSUE_FEATURE | 标题含[Feature]/[RFE] | 评估可行性 |
-| PR_BUGFIX | 标题以fix开头/含bug标签 | 审查+可能合并 |
-| PR_OTHER | 其他 | 评估报告 |
-
-## Common Mistakes
-
-- ❌ 多个项目合并到一个任务 → ✅ 1 issue/PR = 1 background subagent
-- ❌ PR分支执行git checkout → ✅ 只用gh CLI读取
-- ❌ 评论没有[bot]前缀 → ✅ 必须加[bot]前缀
-- ❌ 自动合并不满足条件的PR → ✅ 6个条件全部满足才合并
+1. `TaskCreate` for the overall triage job
+2. Fetch all open issues + PRs via gh CLI (paginate if needed)
+3. Classify each item (ISSUE_QUESTION, ISSUE_BUG, ISSUE_FEATURE, PR_BUGFIX, etc.)
+4. For EACH item: `TaskCreate` + `task(category="free", run_in_background=true, load_skills=[], prompt=...)`
+5. Poll `background_output()` — stream results as they arrive
+6. `TaskUpdate` each task with the subagent's findings
+7. Produce final summary report

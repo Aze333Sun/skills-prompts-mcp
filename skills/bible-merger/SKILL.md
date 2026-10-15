@@ -1,6 +1,6 @@
 ---
 name: bible-merger
-description: Merge multiple book analyses into a unified bible. Use after analyzing several books from a series to consolidate characters, style patterns, and structure into a single canonical reference.
+description: "Use when consolidating multiple book analyses from the same series or author into a single canonical bible. Merges characters, style patterns, and structure while resolving conflicts into one unified reference."
 ---
 
 # Bible Merger
@@ -93,3 +93,21 @@ Complete `bible/` directory with consolidated files.
 ## Output Language
 French (for content)
 English (for report and metadata)
+
+## Quick Reference
+
+| 操作 | 说明 |
+|------|------|
+| 合并风格 style.md | 跨书比较，仅保留所有书共有的模式；有差异的用 min-max 范围 |
+| 合并角色 | 核心特征仅保留所有出场均证实的；记录跨书演变与关系变化 |
+| 合并结构 | 识别章节长度范围、固定幕结构、每本都出现的模式 |
+| 合并世界观 universe | 常现地点完整整合；单书地点标注来源；后书优先解决矛盾 |
+| 生成 merge-report.md | 输出来源、一致性分析、角色覆盖、已解决冲突 |
+
+## Common Mistakes
+
+- ❌ 把只在单本书出现的模式当作通用规则 → ✅ 仅保留所有书共有的模式，变体用范围标注
+- ❌ 角色特征保留未被行动证实的"听说" → ✅ 优先 shown-in-action over told
+- ❌ 遇到矛盾随意取舍 → ✅ 事实以后书为准，并文档记录 "Sources vary: ..."
+- ❌ 单书角色不标注来源 → ✅ 显著角色包含并标记 "source: [book]"
+- ❌ 世界观地点矛盾不处理 → ✅ 后书优先，单书地点加注来源

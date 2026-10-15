@@ -98,6 +98,29 @@ claude mcp add postgres-pro -- npx -y @crystaldba/postgres-mcp-pro
 
 ---
 
+## 配置模板
+
+所有 MCP 服务器使用统一的 `mcp.json` 格式。参考模板：[mcp.json.template](mcp.json.template)
+
+```json
+{
+  "mcpServers": {
+    "server-name": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@scope/package-name"],
+      "env": {
+        "API_KEY": "${YOUR_API_KEY}"
+      }
+    }
+  }
+}
+```
+
+各子目录中的 README.md 包含具体服务的安装命令和参数，复制 `command`、`args`、`env` 填入上述模板即可。
+
+---
+
 ## 安全提示
 
 - **不要**一次性安装超过 4-5 个 MCP 服务器——会严重消耗上下文窗口

@@ -1,3 +1,4 @@
+<!-- 关联 Skill：无（本 Prompt 暂无对应 Skill，保留为独立模板） -->
 # AI / LLM 开发提示词
 
 ## 1. Prompt 工程优化

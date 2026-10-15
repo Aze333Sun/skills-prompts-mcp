@@ -1,9 +1,15 @@
 ---
 name: chapter-writing
-description: This skill should be used when the user asks to "write a chapter", "next chapter", "chapter outline", "draft chapter", "continue the story", "write a scene", "outline a chapter", or wants to write prose for a story project.
+description: "Use when the user asks to write, draft, outline, or continue a story chapter or scene. Builds a beat-by-beat outline for approval, then writes full prose and updates all cross-references (chapter index, timeline, foreshadowing)."
 ---
 
 # Chapter Writing
+
+## When to Use
+
+- 用户要求写、起草、续写、或大纲化某个故事章节或场景
+- 用户要为已有的故事项目（story.md + 角色 + plot）推进剧情
+- 用户要求修订已写章节（定向修改而非重写）
 
 ## Overview
 
@@ -94,3 +100,22 @@ When asked to revise a chapter:
 
 - **`references/chapter-template.md`** - Frontmatter and structure template for chapter files
 - **`references/writing-guidelines.md`** - Prose craft guidance: show-don't-tell, POV, dialogue, pacing, scene structure, continuity
+
+## Quick Reference
+
+| 操作 | 说明 |
+|------|------|
+| 收集上下文 | 读 story.md / chapters/_index.md / plot/_index.md / timeline.md + 上一章 |
+| 确定章节范围 | 询问覆盖内容/POV/地点，或按 plot arcs 建议下一拍 |
+| 构建大纲 | 逐 beat 列出场景、POV、地点、推进的弧、需种植/兑现的伏笔 |
+| 写正文 | 按批准大纲写，遵循 POV/时态，使用角色声线与世界观细节 |
+| 写后更新 | 同步 _index.md / timeline.md / arc 文件 / 伏笔状态 |
+| 修订章节 | 定向编辑而非重写，更新 frontmatter 字数与状态 |
+
+## Common Mistakes
+
+- ❌ 不先出大纲就直接写正文 → ✅ 先构建 beat 大纲请用户批准再动笔
+- ❌ 写完忽略跨引用更新 → ✅ 写后同步 _index / timeline / arc / 伏笔
+- ❌ 场景无明确 POV/地点 → ✅ 每个场景标注 POV 角色与地点，用 `---` 分隔
+- ❌ 重写式修订 → ✅ 定向编辑，更新字数与状态(draft→revised)
+- ❌ 脱离角色声线/世界观 → ✅ 引用角色文件与 worldbuilding 文件保持一致性

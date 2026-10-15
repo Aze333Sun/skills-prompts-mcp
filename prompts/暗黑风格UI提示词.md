@@ -1,4 +1,5 @@
-## 暗黑风格UI提示词：
+<!-- 关联 Skill：frontend-ui-ux / ui-ux-pro-max（暗黑风 UI 设计推荐直接使用 Skill） -->
+# 暗黑风格UI提示词
 
 Design a dark interface with layered depth.
 
@@ -24,5 +25,3 @@ Typography:
 - Font size: heading 24px/700, body 15px/400, caption 12px/400
 
 - Line height: 1.6 for body text
-
-  

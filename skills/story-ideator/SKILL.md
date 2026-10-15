@@ -1,11 +1,19 @@
 ---
 name: story-ideator
-description: Generate original storylines from any universe bible without plagiarizing source material. Use when creating new adventures using established characters, locations, and style. Triggers on "invent a story", "create a new adventure", "generate synopsis", "brainstorm plot".
+description: "Use when generating original storylines from an established universe bible (characters, locations, style) without plagiarizing source material — brainstorming new adventures, synopses, or chapter plans using existing IP. Triggers on 'invent a story', 'create a new adventure', 'generate synopsis', 'brainstorm plot'."
 ---
 
 # Story Ideator Skill
 
 Generate **original** storylines using an established universe bible. The goal is authentic stories that feel like they belong in the universe while being completely new.
+
+## When to Use
+
+- 基于已有 universe bible（角色/地点/风格）创作全新故事线
+- 用既有 IP 头脑风暴新冒险、新谜题、新冲突
+- 生成 synopsis（故事简介）或 chapter plan（分章计划）
+- 触发词："invent a story"、"create a new adventure"、"generate synopsis"、"brainstorm plot"
+- 前提：项目含 `bible/style.md`、`bible/structure.md`、`bible/characters/`、`bible/universe/`
 
 ## Core Principle: Originality Over Imitation
 
@@ -209,9 +217,18 @@ Internal thinking/checks can be in English.
 - If user has specific ideas, integrate them as constraints
 - Explain reasoning for anti-plagiarism flags
 
-## Quick Commands
+## Quick Reference
 
-User can trigger abbreviated flow:
-- `Ideate: [constraint]` → Skip to Phase 2 with constraint
-- `Develop seed N` → Take seed N directly to Phase 3
-- `Check plot: [description]` → Run only Phase 4 on description
+| 操作 | 说明 |
+|------|------|
+| `Ideate: [constraint]` | 带约束直接进入 Phase 2（碰撞脑暴）|
+| `Develop seed N` | 将第 N 个 seed 直接送入 Phase 3（扩展为 logline/结构）|
+| `Check plot: [description]` | 仅对描述运行 Phase 4（反抄袭检查）|
+
+## Common Mistakes
+
+- ❌ 直接复用原作剧情结构/场景/反派原型 → ✅ 只用 ELEMENTS（角色/地点/语气），用组合技法定制全新谜题与解决
+- ❌ 跳过 Phase 4 反抄袭检查就交付 → ✅ 与原作 `structure.md` 对比，单源 0-1 匹配才放行，2-3 匹配需修改，4+ 重选 seed
+- ❌ 没有 bible 文件就开脑暴 → ✅ 先确认 `bible/style.md`、`structure.md`、`characters/`、`universe/` 存在
+- ❌ 替用户直接定方案 → ✅ 每阶段先给选项与理由，让用户确认后再推进
+- ❌ 内部思考语言与 bible 风格不符 → ✅ 输出语言跟随 `bible/style.md`，思考可用英文

@@ -8,8 +8,8 @@
 
 ```
 skills-prompts-mcp/
-├── skills/                    # 34 个自建/自定义 Skills
-│   ├── skills-collected/      # 27 个社区收集的 Skills（只读，不修改）
+├── skills/                    # 94 个 Skills（自建 57 + collected 37）
+│   ├── skills-collected/      # 37 个社区收集的 Skills（只读，不修改）
 │   └── [skill-name]/         # 各自建 Skill 目录
 ├── agents/                    # Agent 配置与模板
 ├── prompts/                   # 独立提示词（80个）
@@ -31,9 +31,13 @@ skills-prompts-mcp/
 
 `skills/skills-collected/` 下的文件来自社区，**禁止直接修改**。如需定制，应创建新的自建 Skill。
 
-### 3. 格式门禁必须通过
+### 3. 格式门禁必须通过（仅自建）
 
-所有 `skills/` 目录下的 `SKILL.md` 必须通过格式检查才能提交。
+**自建** `skills/` 目录下的 `SKILL.md` 必须通过格式检查才能提交。`skills/skills-collected/` 为社区标准原样保留，门禁脚本（`scripts/validate-skills.ps1`）自动排除，**不参与检查**。
+
+### 4. 同名冲突处理
+
+若自建 Skill 与 collected 同名，须加后缀区分以避免加载歧义。示例：自建 Word 文档处理 Skill 命名为 `docx-simple`（collected 为 `docx`）。
 
 ---
 
@@ -290,6 +294,38 @@ name: my-skill-v2
 
 ---
 
+## Skill 废弃规范
+
+对确定要废弃的自建 Skill：
+
+1. 在 `SKILL.md` 的 `description` 末尾追加 ` [DEPRECATED: use xxx instead]`
+2. 目录最少保留 1 个版本周期后再归档删除
+3. 在 [CHANGELOG.md](CHANGELOG.md) 中记录废弃原因和替代方案
+4. 同步更新 INDEX.md 中的导航条目
+
+**注意**：`skills-collected/` 下的 Skill 不能修改，无法标记 deprecated。如有重叠，在自建 Skill 的 description 中注明与 collected 版本的关系即可。
+
+---
+
+## Prompts 管理规范
+
+### 头部注释（必须）
+
+每个 `prompts/` 目录下的 `.md` 文件必须在文件第一行包含关联注释：
+
+```markdown
+<!-- 关联 Skill：xxx（推荐直接使用 Skill） -->
+```
+
+三种状态：
+- `无` — 暂无对应 Skill，保留为独立模板
+- `→ xxx` — 有对应 Skill，推荐优先使用
+- `已升级为 Skill` — 已被 Skill 完全覆盖，仅保留索引
+
+新增 Prompt 文件时必须同步添加头部注释，并更新 INDEX.md。
+
+---
+
 ## Git 规范
 
 ### Commit Message 格式
@@ -324,8 +360,10 @@ git commit -m "docs: update README with new skill categories"
 ### 日常维护
 
 1. 检查新提交的 SKILL.md 是否通过格式检查
-2. 更新 README.md 中的 Skill 列表
-3. 确保每个 Skill 都有清晰的触发条件
+2. 更新 INDEX.md 中的 Skill 列表和导航
+3. 新增 Prompt 时添加头部关联注释
+4. 废弃 Skill 时更新 CHANGELOG.md
+5. 结构性变更后更新 README.md（如数量变化）
 
 ### 添加社区 Skill
 
