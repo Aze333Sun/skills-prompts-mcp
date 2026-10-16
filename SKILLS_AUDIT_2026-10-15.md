@@ -65,3 +65,10 @@
 - **门禁**：`validate-skills.ps1` 检查 57 个自建 SKILL.md，全部通过。
 - **文档同步**：README（collected 27→37、自建速览表补全 26 个）、INDEX.md（社区表补 4 个）、AGENTS.md（57+37=94）已更新。
 - **可恢复性**：删除经 git 暂存（`git rm`），可用 `git restore` / `git checkout` 恢复。
+
+## 8. 提交状态（2026-10-15，已本地提交）
+
+- **本地提交**：`bcca642` — `chore: add new skills batch and deduplicate repo`（82 files changed, +8621/-507）。
+- **内容**：本次清理 + 文档同步 + 新增技能批次一并入库；`.workbuddy/`（内部记忆目录）已加入 `.gitignore` 并排除出暂存区。
+- **钩子修复**：pre-commit 钩子此前在沙箱环境下多次挂死（根因：`grep -q` 管道 SIGPIPE、`rm` 沙箱拦截、PCRE 路径提取异常），已修复为 bash 内建判定 + 进程替换 + ERE 提取，现可正常退出（退出码 0）。
+- **未推送**：按用户要求仅本地提交，未 `git push`。本地领先 `origin/main` 4 个 commit（含本次 1 个 + 之前会话 3 个），待用户决定何时推送。
