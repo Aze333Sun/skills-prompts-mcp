@@ -26,6 +26,30 @@
 
 ---
 
+## 分支结构（main + 分发分支）
+
+`main` 是唯一真源（全量内容），另有三个**只读分发快照分支**，由脚本从 `main` 自动生成、可随时重建：
+
+| 分支 | 内容 | 用途 |
+|------|------|------|
+| `main` | 全量（README / 门禁脚本 / 全部内容） | 唯一修改入口 |
+| `skills` | 仅 `skills/` + 说明 README | 下游只拉技能 |
+| `prompts` | 仅 `prompts/` + 说明 README | 下游只拉提示词 |
+| `mcp` | 仅 `mcp/` + 说明 README | 下游只拉 MCP 配置 |
+
+```bash
+# 只要技能：单分支拉取（不下载 prompts/mcp/历史全量）
+git clone -b skills --single-branch https://github.com/Aze333Sun/skills-prompts-mcp.git
+
+# 在 main 上修改并提交后，重建并推送分发分支
+git checkout main
+.\scripts\sync-distribution-branches.ps1 -Push
+```
+
+> **规则：只在 `main` 上修改。** 分发分支是快照，直接提交到分发分支会被下次重建覆盖。
+
+---
+
 ## 门禁系统
 
 本仓库对**自建 Skills**（`skills/` 下除 `skills-collected/` 外的 `SKILL.md`）使用格式门禁检查，提交前需通过 `AGENTS.md` 定义的规范。`skills-collected/` 为社区标准原样保留，**豁免门禁、只读不修改**。

@@ -131,3 +131,12 @@ f4cbcfd Add Top 20 community MCP server configuration docs
 - ERROR：0（提交不再被阻断）
 - WARNING：58 个章节缺失（不阻断，后续可补）
 - Skill 总数：59 → 57
+
+## 2026-10-17 分支结构：main 真源 + 内容分发分支
+
+采用方案 A：`main` 保持全量真源不变，新增三个只读分发快照分支（`skills` / `prompts` / `mcp`），供下游按需单分支拉取（如 `git clone -b skills --single-branch`）。
+
+- 新增 `scripts/sync-distribution-branches.ps1`：用 git plumbing（rev-parse / mktree / commit-tree）从 main 生成快照分支，不切工作区、不产生临时提交
+- 分发分支结构：`<内容目录>/` + 自动生成的说明 README（标明只读、重建方式、快照基线）
+- 修复两个坑：PS5.1 按 ANSI 读无 BOM UTF-8 脚本导致中文乱码（脚本加 BOM）；PowerShell 管道把 `\r` 混入 mktree 行尾导致 README.md 文件名带 `^\r`（改为临时文件 + cmd 重定向）
+- 验证：skills 672 文件、prompts 10 文件、mcp 22 文件，根条目干净
