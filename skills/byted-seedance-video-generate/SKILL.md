@@ -1,6 +1,6 @@
 ---
 name: byted-seedance-video-generate
-description: Generate videos using Seedance models. Invoke when user wants to create videos from text prompts, images, or reference materials.
+description: Use when the user wants to create videos from text prompts, images, or reference materials. Generates videos using Seedance models.
 ---
 
 # Video Generate Skill

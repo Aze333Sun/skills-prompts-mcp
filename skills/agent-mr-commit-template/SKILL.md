@@ -1,6 +1,6 @@
 ---
 name: "agent-commit-gate"
-description: "智能体（Agent）代码提交门禁 + 评审模板。Agent 在执行任何 git commit / git push / 提 MR / 创建合并请求 之前必须加载本技能：以门禁方式强制「先定范围 -> 评审打分 -> 识别高风险 -> 填写模板 -> 追问补全 -> 落提交记录 -> 用户确认」，未走完门禁流程前禁止提交。技能自包含一套可直接复制填空的门禁流程模板、评审 Checklist 与评分模板、MR 描述模板、轻量通道模板、提交记录文件模板与追问模板，可整体复制到任意工程的 .trae/skills/agent-commit-gate/ 下使用。"
+description: "Use when Agent 执行任何 git commit / git push / 提 MR / 创建合并请求之前。智能体（Agent）代码提交门禁 + 评审模板：以门禁方式强制「先定范围 -> 评审打分 -> 识别高风险 -> 填写模板 -> 追问补全 -> 落提交记录 -> 用户确认」，未走完门禁流程前禁止提交。技能自包含一套可直接复制填空的门禁流程模板、评审 Checklist 与评分模板、MR 描述模板、轻量通道模板、提交记录文件模板与追问模板，可整体复制到任意工程的 .trae/skills/agent-commit-gate/ 下使用。"
 ---
 
 # Agent 提交门禁 + 评审模板

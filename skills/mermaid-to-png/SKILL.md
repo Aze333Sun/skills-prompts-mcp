@@ -1,7 +1,6 @@
 ---
 name: mermaid-to-png
-description: "将 Markdown 中的 Mermaid 代码块批量渲染为 PNG 图片"
-when_to_use: "用户要求将 Mermaid 图表渲染为图片、从 Markdown 提取图表生成 PNG、或批量导出架构图/流程图时使用"
+description: "Use when 用户要求将 Mermaid 图表渲染为图片、从 Markdown 提取图表生成 PNG、或批量导出架构图/流程图。将 Markdown 中的 Mermaid 代码块批量渲染为 PNG 图片"
 effort: medium
 ---
 

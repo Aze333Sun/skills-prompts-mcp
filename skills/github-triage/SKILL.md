@@ -1,6 +1,6 @@
 ---
 name: github-triage
-description: "Unified GitHub triage for issues AND PRs. 1 item = 1 background task (category: free). Issues: answer questions from codebase, analyze bugs. PRs: review bugfixes, merge safe ones. All parallel, all background. Triggers: 'triage', 'triage issues', 'triage PRs', 'github triage'."
+description: "Use when the user says 'triage', 'triage issues', 'triage PRs', or 'github triage'. Unified GitHub triage for issues AND PRs. 1 item = 1 background task (category: free). Issues: answer questions from codebase, analyze bugs. PRs: review bugfixes, merge safe ones. All parallel, all background."
 ---
 
 # GitHub Triage — Unified Issue & PR Processor
