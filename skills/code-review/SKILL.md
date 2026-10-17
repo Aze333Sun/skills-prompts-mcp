@@ -1,6 +1,6 @@
 ---
 name: code-review
-description: "Use when reviewing, inspecting, or checking code changes — including 'code review', 'review my changes', '帮我审查代码', '看看改动有没有问题', 'review HEAD~N', 'check my PR', 'CR', or any request to evaluate code changes before merge/push."
+description: "Use when reviewing, inspecting, or checking code changes without a commit/MR flow — including 'code review', 'review my changes', '帮我审查代码', '看看改动有没有问题', 'review HEAD~N', 'check my PR', 'CR', or any request to evaluate code changes on its own merits. For pre-commit flows use mr-commit-template (no OCR) or code-review-workflow (OCR); for OCR setup use opencode-review."
 effort: high
 ---
 

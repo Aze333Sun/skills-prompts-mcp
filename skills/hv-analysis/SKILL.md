@@ -1,6 +1,9 @@
 ---
 name: hv-analysis
-description: "Use when conducting systematic deep research (横纵分析法) on a product, company, concept, technology, or person. Traces its full history on the longitudinal axis and compares it with peers on the cross-sectional axis, then outputs a typeset PDF report. Triggers: 横纵分析/深度研究/竞品分析/帮我分析."
+description: |
+  Use when 系统性研究一个产品、公司、概念、技术或人物：横纵分析、研究一下、帮我分析、深度研究、做个研究、调研一下、竞品分析、帮我看看这个东西怎么样、这个产品/公司/概念是怎么回事、帮我摸清楚、帮我搞懂、帮我做个 deep research，或"帮我了解一下XX"、"XX是什么来头"（上下文暗示需要系统性深度研究而非简单概念解释）。
+  横纵分析法（Horizontal-Vertical Analysis）深度研究 Skill，由数字生命卡兹克提出，融合索绪尔的历时-共时分析、社会科学的纵向-横截面研究设计、商学院案例研究法与竞争战略分析的核心思想。核心是双轴分析：纵轴追踪从诞生到当下的完整生命历程（以叙事故事呈现），横轴在当下时间截面上与竞品/同类进行系统性横向对比，最后交叉两条轴产出独到洞察，最终产出一份排版精美的 PDF 研究报告。
+  也适用于用户丢来一个产品名、公司名、技术名词说"帮我研究一下这个"的场景。不用于简单名词解释（用户只问"XX是什么"）、不用于公众号写作（那个用 khazix-writer）、不用于纯标题摘要生成（用 wechat-title）。
 ---
 
 # 横纵分析法深度研究

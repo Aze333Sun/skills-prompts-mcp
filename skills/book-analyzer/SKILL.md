@@ -1,6 +1,6 @@
 ---
 name: book-analyzer
-description: "Use when analyzing novels, stories, or narrative text to extract a reusable writing bible. Produces structured style, character, structure, and universe files with evidence-based quotes for style matching and story generation."
+description: "Use when analyzing novels, stories, or any narrative text to extract structured bible files (style, characters, structure, universe), creating a reusable writing bible for style matching and story generation."
 ---
 
 # Book Analyzer

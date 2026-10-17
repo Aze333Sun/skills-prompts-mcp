@@ -1,7 +1,9 @@
 ---
 name: fanqie-female-writer
-description: "Use when writing female-audience (女频) novels for the Fanqie platform, including romance, ancient setting, rebirth revenge, sweet romance, farming/slice-of-life, palace/house intrigue."
-effort: high
+description: |
+  Use when 写番茄女频、女频网文、言情小说、古言、甜宠文、总裁文、重生文、穿书文、番茄言情，或要写一本女频小说。
+  番茄小说女频长篇网文写作 Skill，覆盖现代言情、古言穿越、重生复仇、甜宠总裁、种田基建、宫斗宅斗等女频热门题材。
+  继承 fanqie-novel-writer 的番茄平台全部策略，叠加女频专属的情感节奏、关系张力、CP 塑造等策略。
 ---
 
 # 番茄小说女频写作

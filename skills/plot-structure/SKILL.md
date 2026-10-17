@@ -1,6 +1,6 @@
 ---
 name: plot-structure
-description: "Use when planning or managing a story's narrative structure — creating plot arcs, adding plot points, tracking foreshadowing, maintaining the timeline, or choosing act/beat structure. Requires an existing story project (created via the story-init skill)."
+description: "Use when the user asks to \"create a plot arc\", \"story structure\", \"add a plot point\", \"story timeline\", \"track foreshadowing\", \"pacing\", \"act structure\", \"story arc\", \"plot outline\", or wants to plan and manage the narrative structure of a story."
 ---
 
 # Plot Structure

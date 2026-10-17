@@ -1,6 +1,6 @@
 ---
 name: worldbuilding
-description: "Use when the user wants to create or expand a story's world and setting — locations, or systems like magic, politics, technology, religion, economy, culture, or world history. Stores elements as cross-referenced markdown files."
+description: "Use when the user asks to \"create a location\", \"add a location\", \"magic system\", \"political system\", \"build the world\", \"add culture\", \"world history\", \"technology system\", \"religion\", \"economy\", or wants to develop any aspect of a story's world and setting."
 ---
 
 # Worldbuilding

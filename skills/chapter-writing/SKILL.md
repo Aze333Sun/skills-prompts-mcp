@@ -1,6 +1,6 @@
 ---
 name: chapter-writing
-description: "Use when the user asks to write, draft, outline, or continue a story chapter or scene. Builds a beat-by-beat outline for approval, then writes full prose and updates all cross-references (chapter index, timeline, foreshadowing)."
+description: "Use when the user asks to \"write a chapter\", \"next chapter\", \"chapter outline\", \"draft chapter\", \"continue the story\", \"write a scene\", \"outline a chapter\", or wants to write prose for a story project."
 ---
 
 # Chapter Writing

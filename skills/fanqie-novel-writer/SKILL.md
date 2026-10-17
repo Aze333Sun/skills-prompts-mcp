@@ -1,7 +1,9 @@
 ---
 name: fanqie-novel-writer
-description: "Use when writing novels for the Fanqie (番茄) platform, creating free-to-read web novels with ad monetization, or planning content for Fanqie's recommendation algorithm."
-effort: high
+description: |
+  Use when 写番茄小说、番茄网文、番茄平台、免费网文、广告分成网文、番茄开头、番茄爽文，或要写一本番茄风格的小说。
+  番茄小说平台长篇网文写作 Skill，覆盖推荐机制、读者画像、爽点密度、广告变现模式、章节节奏等平台专属策略。
+  与 novel-writer 的关系：novel-writer 是网文通用框架，本 Skill 是番茄平台特化版——在通用框架之上叠加平台专属策略。
 ---
 
 # 番茄小说平台写作

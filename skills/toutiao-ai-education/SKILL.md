@@ -1,6 +1,8 @@
 ---
 name: toutiao-ai-education
-description: "Use when writing 今日头条 AI 教育赛道 content — AI 工具教程、AI 行业解读、AI 学习路径、AI 工具测评、AI 与日常生活、AI 职业规划等头条文章。继承 toutiao-writer 通用规范并叠加 AI 教育专属策略。触发词：头条AI文章、AI工具推荐、AI教程、AI科普、AI教育内容、AI副业、AI写作变现。"
+description: |
+  Use when 撰写 AI 工具教程、AI 行业解读、AI 学习路径、AI 工具测评、AI 与日常生活、AI 职业规划等头条文章。触发词：头条AI文章、AI工具推荐、AI教程、AI科普、AI教育内容、写一篇AI相关的头条爆文、DeepSeek/ChatGPT/Midjourney 等 AI 工具使用教程、AI写作变现、AI副业、AI最新动态解读。
+  继承 toutiao-writer 的通用写作规范，叠加 AI 教育赛道的专属策略。
 ---
 
 # 今日头条 AI 教育赛道内容创作

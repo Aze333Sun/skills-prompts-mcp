@@ -1,6 +1,6 @@
 ---
 name: story-init
-description: "Use when starting a new fiction project from scratch — initializing a story's folder structure (story bible, character registry, worldbuilding index, plot structure, chapter tracker) as cross-referenced markdown files. Triggers on 'start a new story', 'initialize a story project', 'new book', 'set up a story'."
+description: "Use when the user asks to \"start a new story\", \"initialize a story project\", \"create a story\", \"new book\", \"set up a story\", or wants to begin a new fiction writing project from scratch."
 ---
 
 # Story Initialization

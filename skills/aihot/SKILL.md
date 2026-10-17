@@ -1,6 +1,7 @@
 ---
 name: aihot
-description: "Use when searching for today's AI news, AI daily digest, checking what's happening in the AI/LLM/startup space, or querying AI model releases and industry trends."
+description: |
+  Use when 查询中文 AI 资讯：今天 AI 圈有什么、AI 日报、AI HOT、AI 资讯、AI 热点、AI 新闻、最近 AI、OpenAI/Anthropic/Google 最近发布了什么、AI hot today、AI news today、AI 行业动态、大模型发布、AI 论文、AI 产品发布、AI 技巧与观点，或问"今天发生了什么"而上下文是 AI / 大模型 / LLM / 创业领域。Skill 直接 curl 公开 REST API 拉数据整理成中文 markdown 简报，无需 API Key 或 MCP server。**不要 undertrigger**——用户问 AI 资讯而不调本 Skill 就是把过时的训练数据当作今日新闻，对用户有害。
 ---
 
 # AI HOT Skill

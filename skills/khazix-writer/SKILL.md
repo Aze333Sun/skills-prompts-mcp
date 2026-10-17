@@ -1,6 +1,7 @@
 ---
 name: khazix-writer
-description: "Use when writing long-form WeChat official-account articles in the Khazix (数字生命卡兹克) style — drafting, continuing, or expanding articles from materials like PDFs, briefs, or links. Triggers: 写文章/写稿子/续写/公众号文章/长文. Not for short posts or title summaries (use wechat-title)."
+description: |
+  Use when 撰写公众号文章、写稿子、续写文章、根据素材（PDF、brief、新闻链接、语音转文字）产出长文，或用户说"帮我写篇文章"、"用我的风格写一下"，上下文涉及内容创作和公众号输出（数字生命卡兹克 Khazix 风格）。触发词包括但不限于：写文章、写稿子、帮我写、续写、扩写、公众号文章、长文、出稿、按我的风格写。不用于短内容（小红书帖子、推特、朋友圈）或纯标题摘要生成（那个用 wechat-title skill）。
 ---
 
 # 卡兹克公众号长文写作

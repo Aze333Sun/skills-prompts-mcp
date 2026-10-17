@@ -1,6 +1,6 @@
 ---
 name: story-ideator
-description: "Use when generating original storylines from an established universe bible (characters, locations, style) without plagiarizing source material — brainstorming new adventures, synopses, or chapter plans using existing IP. Triggers on 'invent a story', 'create a new adventure', 'generate synopsis', 'brainstorm plot'."
+description: "Use when creating original storylines from any universe bible without plagiarizing source material — new adventures using established characters, locations, and style. Triggers on \"invent a story\", \"create a new adventure\", \"generate synopsis\", \"brainstorm plot\"."
 ---
 
 # Story Ideator Skill

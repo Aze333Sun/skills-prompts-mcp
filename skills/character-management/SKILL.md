@@ -1,6 +1,6 @@
 ---
 name: character-management
-description: "Use when the user asks to create, update, or manage characters in a story project. Builds rich character profiles with YAML frontmatter, family trees, relationship maps, and cross-references with other story elements."
+description: "Use when the user asks to \"create a character\", \"update a character\", \"add a character\", \"build a family tree\", \"character relationships\", \"character timeline\", \"character arc\", \"character profile\", or needs to manage characters in a story project."
 ---
 
 # Character Management
